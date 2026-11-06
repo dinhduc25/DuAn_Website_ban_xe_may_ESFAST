@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Ngăn chặn truy cập file ẩn
+    RewriteRule ^(\.env|\.git|composer\.) - [F,L]
+
+    # Kiểm tra nếu là file hoặc thư mục thực tế tồn tại
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Điều hướng toàn bộ về index.php
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
