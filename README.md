@@ -1,278 +1,201 @@
-# ESFAST ECOMMERCE – WEBSITE THƯƠNG MẠI ĐIỆN TỬ XE MÁY ĐIỆN THÔNG MINH
+# ESFAST ECOMMERCE – WEBSITE XE MÁY ĐIỆN THÔNG MINH (HTML, CSS, VANILLA JAVASCRIPT)
 
-Hệ thống website thương mại điện tử chuyên kinh doanh xe máy điện thông minh **ESFAST**, lấy cảm hứng từ phong cách trình bày cao cấp, công nghệ hiện đại và trải nghiệm mua hàng của VinFast.
+Hệ thống website thương mại điện tử chuyên kinh doanh xe máy điện thông minh **ESFAST**, lấy cảm hứng từ phong cách thiết kế hiện đại, công nghệ cao cấp và trải nghiệm người dùng của VinFast.
 
-Dự án được xây dựng tuân thủ 100% bộ quy tắc **AI CODING RULES – ESFAST ECOMMERCE** và tài liệu kiến trúc **agent.md**:
-- **Backend**: 100% PHP OOP (Object-Oriented Programming).
-- **Kiến trúc**: MVC (Model – View – Controller) chặt chẽ, routing tập trung qua `public/index.php`.
-- **Cơ sở dữ liệu**: MySQL kết hợp PDO Prepared Statements, ERRMODE_EXCEPTION, Transaction toàn vẹn dữ liệu.
-- **Frontend**: HTML5, CSS3, JavaScript thuần, giao diện Tech Blue & Carbon sang trọng, responsive 100% trên PC, Tablet và Mobile.
-- **Bảo mật**: Chống SQL Injection, XSS (`htmlspecialchars`), CSRF Token cho biểu mẫu thay đổi dữ liệu, mã hóa mật khẩu `password_hash()` và `password_verify()`, `session_regenerate_id(true)`.
+Website được xây dựng **100% bằng HTML5, CSS3, JavaScript thuần (Vanilla JS)** và **LocalStorage/SessionStorage**.
+- **Không sử dụng PHP**
+- **Không sử dụng MySQL / PDO**
+- **Không sử dụng Node.js**
+- **Không sử dụng React, Vue, Angular hay framework frontend**
+- **Không sử dụng Backend hay API bên ngoài**
+- **Chạy trực tiếp 100% trên mọi trình duyệt web (Chrome, Edge, Firefox, Safari)**
 
 ---
 
-## 1. THÔNG TIN TÀI KHOẢN THỬ NGHIỆM (DEMO ACCOUNTS)
+## 1. THÔNG TIN TÀI KHOẢN DEMO (QUICK-FILL TỰ ĐỘNG)
 
-Trang đăng nhập (`/login`) tích hợp sẵn **nút điền nhanh (Quick-fill)** cho 2 tài khoản demo:
+Trang đăng nhập (`login.html`) có sẵn **2 nút điền nhanh (Quick-fill 1-click)** trực tiếp trên giao diện:
 
-| Nhóm Tài Khoản | Email / Username | Mật Khẩu Khởi Tạo | Vai Trò (Role) | Chuyển Hướng Sau Đăng Nhập |
+| Loại Tài Khoản | Tên Đăng Nhập (Username) | Mật Khẩu | Quyền Hạn (Role) | Chuyển Hướng Sau Đăng Nhập |
 | :--- | :--- | :--- | :--- | :--- |
-| **Quản Trị Viên (Admin)** | `admin@esfast.vn` / `admin_demo` | `Admin@123` | `admin` | Tự động chuyển hướng vào `/admin` |
-| **Khách Hàng (Customer)** | `customer@esfast.vn` / `customer_demo` | `Customer@123` | `customer` | Tự động chuyển hướng về Trang chủ `/` |
+| **Khách Hàng (Customer)** | `customer` | `123456` | `customer` | Tự động chuyển hướng về Trang chủ (`index.html`) |
+| **Quản Trị Viên (Admin)** | `admin` | `admin123` | `admin` | Tự động chuyển hướng vào Trang Quản Trị (`admin/index.html`) |
 
 ---
 
-## 2. PHÂN HỆ VÀ CHỨC NĂNG HỆ THỐNG
-
-### A. Khu Vực Khách Hàng (Client Area)
-1. **Trang Chủ (`/`)**:
-   - Hero banner lớn với thông số công nghệ (Tốc độ, Quãng đường, Chống nước IP67) phong cách VinFast.
-   - Thẻ danh mục xe theo phân khúc.
-   - Danh sách dòng xe bán chạy nhất (Best-sellers).
-   - Danh sách dòng xe mới ra mắt (New arrivals).
-   - Ưu điểm công nghệ vượt trội: Pin LFP chống cháy nổ, lội nước IP67, tiết kiệm 80% chi phí.
-   - Cẩm nang xe điện và tin tức mới nhất.
-   - Footer đầy đủ chính sách, hotline, hệ thống showroom.
-
-2. **Danh Sách Sản Phẩm (`/products`)**:
-   - Hiển thị danh sách xe từ Database MySQL.
-   - Bộ lọc đa tiêu chí: Danh mục, thương hiệu, khoảng giá (min-max), tốc độ tối đa, quãng đường 1 lần sạc, công nghệ pin.
-   - Sắp xếp linh hoạt (Mới nhất, giá tăng/giảm, bán chạy, tên A-Z).
-   - Tìm kiếm từ khóa theo tên xe, mã SKU, mô tả.
-   - Phân trang tự động, huy hiệu hết hàng.
-
-3. **Chi Tiết Sản Phẩm (`/products/{slug}`)**:
-   - Thư viện ảnh lớn và bộ ảnh góc phụ (Thumbnails).
-   - Chọn biến thể trực quan: Màu sắc ngoại thất, phiên bản xe và gói pin.
-   - Tự động cập nhật mức giá và số lượng tồn kho tương ứng với biến thể theo thời gian thực (JS).
-   - Bảng thông số kỹ thuật chi tiết: Tốc độ, quãng đường, công suất động cơ, thời gian sạc, trọng lượng, chuẩn chống nước, dung tích cốp.
-   - Nút **Thêm Vào Giỏ** và **Mua Ngay** (kiểm soát số lượng tồn kho).
-   - Gợi ý xe cùng phân khúc thông minh.
-
-4. **Giỏ Hàng (`/cart`)**:
-   - Quản lý giỏ hàng bằng Session an toàn.
-   - Thêm xe kèm biến thể, tăng/giảm số lượng, xóa sản phẩm, làm trống giỏ hàng.
-   - Nhập mã giảm giá Voucher với kiểm tra giá trị đơn tối thiểu tự động.
-   - Danh sách voucher gợi ý dùng nhanh.
-
-5. **Thanh Toán Đặt Xe (`/checkout`)**:
-   - Nhập thông tin người nhận, điện thoại, email, địa chỉ bàn giao, ghi chú.
-   - Chọn phương thức thanh toán: COD (Tiền mặt khi giao xe), Chuyển khoản ngân hàng, Cổng thanh toán điện tử trực tuyến.
-   - Kiểm tra tồn kho và tính toán giá trị đơn hàng 100% tại Server (không tin tưởng client).
-   - Xử lý đơn bằng **Database Transaction**.
-
-6. **Trang Đặt Hàng Thành Công (`/checkout/success/{code}`)**:
-   - Hiển thị mã đơn hàng `ESF-YYYYMMDD-XXXX`, chi tiết người nhận, phương thức thanh toán và danh sách xe đã đặt.
-
-7. **Quản Lý Tài Khoản Khách Hàng (`/account`)**:
-   - Xem và cập nhật thông tin cá nhân (Họ tên, email, SĐT, địa chỉ).
-   - Đổi mật khẩu an toàn với xác thực mật khẩu hiện tại.
-   - Xem lịch sử đơn hàng (`/account/orders`).
-   - Xem chi tiết từng đơn hàng (`/account/orders/{code}`).
-   - Khách hàng được phép hủy đơn khi đơn đang ở trạng thái Chờ xử lý (Pending), tự động phục hồi tồn kho và voucher.
-
-8. **Voucher & Khuyến Mãi (`/vouchers`)**:
-   - Xem danh sách mã giảm giá đang hoạt động.
-   - Nút 1-click sao chép mã code vào clipboard.
-
-9. **Trang Tĩnh & Hỗ Trợ**:
-   - Về ESFAST (`/about`): Tầm nhìn, sứ mệnh, công nghệ xanh.
-   - Liên Hệ (`/contact`): Bản đồ showroom, hotline, form gửi yêu cầu tư vấn & đăng ký lái thử.
-
----
-
-### B. Khu Vực Quản Trị Viên (Admin Control Panel – `/admin`)
-*Được bảo vệ bằng Server-side Middleware `admin`. Khách chưa đăng nhập hoặc tài khoản Customer đều bị chặn.*
-
-1. **Dashboard (`/admin/dashboard`)**:
-   - Các thẻ KPI tổng quan: Doanh thu thực tế, tổng đơn hàng, số mẫu xe đang bán, số thành viên khách hàng.
-   - Thống kê phân loại đơn theo trạng thái: Chờ xử lý, Đang chuẩn bị xe, Đang giao, Đã hoàn tất, Đã hủy.
-   - Biểu đồ doanh thu 6 tháng gần nhất từ Database thực tế.
-   - Bảng đơn hàng mới nhất tiếp nhận.
-2. **Quản Lý Sản Phẩm Xe (`/admin/products`)**:
-   - Danh sách toàn bộ xe điện, tìm kiếm và lọc danh mục.
-   - Thêm mới xe (`/admin/products/create`): Upload ảnh an toàn (kiểm tra MIME type, dung lượng tối đa 5MB, đuôi ảnh hợp lệ), nhập đầy đủ thông số kỹ thuật điện.
-   - Chỉnh sửa thông tin xe (`/admin/products/edit/{id}`).
-   - Xóa xe hoặc bật/tắt trạng thái kinh doanh với 1 click.
-3. **Quản Lý Biến Thể Xe (`/admin/products/variants/{id}`)**:
-   - Thêm biến thể màu sắc (bảng chọn mã màu HEX), phiên bản, gói pin, mã SKU riêng, giá riêng và số lượng tồn kho riêng.
-   - Xóa biến thể.
-4. **Quản Lý Danh Mục (`/admin/categories`)**:
-   - Thêm/sửa danh mục phân khúc xe.
-   - Xóa danh mục an toàn (ngăn xóa nếu đang có xe thuộc danh mục).
-5. **Quản Lý Đơn Hàng (`/admin/orders`)**:
-   - Xem tất cả đơn hàng, tìm kiếm theo mã đơn, lọc theo trạng thái.
-   - Chi tiết đơn hàng (`/admin/orders/{id}`).
-   - Cập nhật trạng thái tiến trình: `Pending` -> `Processing` -> `Shipping` -> `Completed` / `Cancelled`.
-   - Cập nhật trạng thái thanh toán: `Unpaid` -> `Paid` -> `Refunded`.
-   - Hủy đơn: Tự động phục hồi số lượng tồn kho sản phẩm/biến thể và lượt dùng voucher vào Database.
-6. **Quản Lý Khách Hàng (`/admin/users`)**:
-   - Danh sách khách hàng kèm số đơn đã mua và tổng tiền đã chi tiêu.
-   - Khóa hoặc Mở khóa tài khoản khách hàng.
-7. **Quản Lý Quản Trị Viên (`/admin/users/admins`)**:
-   - Xem danh sách và tạo thêm tài khoản quản trị viên mới.
-8. **Quản Lý Voucher (`/admin/vouchers`)**:
-   - Tạo mã giảm giá theo số tiền cố định hoặc phần trăm (%), thiết lập ngày bắt đầu/kết thúc, hạn mức đơn tối thiểu, số lượt sử dụng tối đa.
-   - Theo dõi lượt đã dùng thực tế.
-9. **Quản Lý Giao Dịch Thanh Toán (`/admin/payments`)**:
-   - Xem mã giao dịch, phương thức và trạng thái.
-   - Nút xác nhận thanh toán thành công cho các giao dịch COD hoặc chuyển khoản.
-10. **Quản Lý Nội Dung (`/admin/content/banners`, `/admin/content/posts`, `/admin/content/contacts`)**:
-    - Quản lý Banner trình diễn trang chủ.
-    - Đăng bài viết và tin tức công nghệ xe điện.
-    - Tiếp nhận và xử lý yêu cầu tư vấn / đăng ký lái thử từ khách hàng.
-11. **Báo Cáo & Thống Kê (`/admin/reports`)**:
-    - Lọc báo cáo doanh số theo khoảng thời gian từ ngày - đến ngày.
-    - Thống kê Top mẫu xe bán chạy nhất (Số lượng bán và doanh thu).
-    - Thống kê chi tiết doanh thu theo từng ngày.
-
----
-
-## 3. CẤU TRÚC THƯ MỤC CHUẨN MVC
+## 2. CẤU TRÚC THƯ MỤC DỰ ÁN
 
 ```text
-DuAN/
+ESFAST/
+├── index.html                  # Trang chủ (Banner slider, sản phẩm nổi bật, tin tức, ưu điểm LFP)
+├── login.html                  # Trang đăng nhập (Tích hợp 2 nút Demo Quick-fill)
+├── register.html               # Trang đăng ký thành viên (Kiểm tra trùng email, SĐT)
+├── products.html               # Trang danh sách xe máy điện & bộ lọc đa tiêu chí
+├── product-detail.html         # Trang chi tiết xe (Chọn màu, phiên bản, thông số pin, mua ngay)
+├── cart.html                   # Giỏ hàng (Tăng giảm số lượng, nhập voucher, tính tiền)
+├── checkout.html               # Thanh toán & đặt xe mô phỏng (COD, Chuyển khoản, VNPAY)
+├── orders.html                 # Tra cứu & quản lý lịch sử đơn mua xe của khách hàng
+├── account.html                # Quản lý hồ sơ cá nhân & đổi mật khẩu
+├── about.html                  # Giới thiệu thương hiệu xe điện ESFAST & công nghệ
+├── contact.html                # Liên hệ, showroom & form đăng ký lái thử xe miễn phí
+├── admin.html                  # Lối tắt chuyển hướng vào khu vực quản trị
 │
-├── app/
-│   ├── Controllers/
-│   │   ├── Controller.php
-│   │   ├── HomeController.php
-│   │   ├── ProductController.php
-│   │   ├── CategoryController.php
-│   │   ├── CartController.php
-│   │   ├── OrderController.php
-│   │   ├── AuthController.php
-│   │   ├── UserController.php
-│   │   ├── VoucherController.php
-│   │   ├── PageController.php
-│   │   └── Admin/
-│   │       ├── DashboardController.php
-│   │       ├── ProductController.php
-│   │       ├── CategoryController.php
-│   │       ├── OrderController.php
-│   │       ├── UserController.php
-│   │       ├── VoucherController.php
-│   │       ├── PaymentController.php
-│   │       ├── ContentController.php
-│   │       └── ReportController.php
-│   │
-│   ├── Models/
-│   │   ├── Model.php
-│   │   ├── Product.php
-│   │   ├── Category.php
-│   │   ├── ProductVariant.php
-│   │   ├── User.php
-│   │   ├── Cart.php
-│   │   ├── Order.php
-│   │   ├── OrderDetail.php
-│   │   ├── Voucher.php
-│   │   ├── Payment.php
-│   │   ├── Banner.php
-│   │   ├── Post.php
-│   │   ├── Contact.php
-│   │   └── Brand.php
-│   │
-│   ├── Views/
-│   │   ├── layouts/
-│   │   │   ├── main.php
-│   │   │   ├── admin.php
-│   │   │   ├── auth.php
-│   │   │   ├── header.php
-│   │   │   ├── footer.php
-│   │   │   └── 404.php
-│   │   ├── home/index.php
-│   │   ├── products/index.php, show.php, _product_card.php
-│   │   ├── categories/show.php
-│   │   ├── cart/index.php
-│   │   ├── checkout/index.php, success.php
-│   │   ├── auth/login.php, register.php
-│   │   ├── account/profile.php, orders.php, order_detail.php
-│   │   ├── vouchers/index.php
-│   │   ├── pages/about.php, contact.php
+├── admin/                      # KHU VỰC QUẢN TRỊ VIÊN (ADMIN CONTROL PANEL)
+│   ├── index.html              # Dashboard (Thống kê KPI, Biểu đồ Canvas doanh thu 6 tháng)
+│   ├── products.html           # Quản lý sản phẩm xe điện & biến thể màu sắc, tồn kho
+│   ├── categories.html         # Quản lý danh mục phân khúc & thương hiệu
+│   ├── orders.html             # Quản lý đơn hàng (Duyệt đơn, chuyển trạng thái giao hàng, thanh toán)
+│   ├── customers.html          # Quản lý tài khoản khách hàng, khóa/mở khóa tài khoản
+│   ├── vouchers.html           # Quản lý mã giảm giá (Phần trăm, số tiền cố định, hạn mức)
+│   ├── banners.html            # Quản lý banner slider trang chủ & bài viết
+│   ├── payments.html           # Quản lý giao dịch thanh toán mô phỏng đối soát
+│   ├── reports.html            # Báo cáo doanh số & Xuất file CSV (Excel) bằng JS thuần
+│   └── settings.html           # Cài đặt hotline, thương hiệu & Khôi phục dữ liệu demo mẫu
+│
+├── assets/
+│   ├── css/
+│   │   ├── style.css           # CSS giao diện chính khách hàng (Tech Blue & Electric Cyan)
+│   │   ├── responsive.css      # CSS tối ưu hiển thị PC, Tablet và Mobile
+│   │   ├── auth.css            # CSS trang đăng nhập/đăng ký với Ambient Glow Orbs
+│   │   └── admin.css           # CSS giao diện Admin (Sidebar, Topbar, KPI, Table)
+│   ├── js/
+│   │   ├── storage.js          # Core Storage Engine quản lý tập trung LocalStorage
+│   │   ├── auth.js             # Xử lý đăng nhập, đăng ký, bảo vệ Route Guard
+│   │   ├── main.js             # Xử lý drawer mobile, tìm kiếm chung, giỏ hàng badge
+│   │   ├── products.js         # Xử lý bộ lọc sản phẩm, tìm kiếm, sắp xếp, phân trang JS
+│   │   ├── cart.js             # Xử lý tính toán giỏ hàng, cập nhật biến thể, voucher
+│   │   ├── checkout.js         # Xử lý form đặt xe, trừ kho mô phỏng, tạo mã đơn ESF-...
+│   │   ├── orders.js           # Xử lý theo dõi đơn khách hàng, xem chi tiết, hủy đơn
+│   │   ├── account.js          # Xử lý cập nhật thông tin cá nhân và đổi mật khẩu
 │   │   └── admin/
-│   │       ├── dashboard/index.php
-│   │       ├── products/index.php, create.php, edit.php, variants.php
-│   │       ├── categories/index.php
-│   │       ├── orders/index.php, show.php
-│   │       ├── users/index.php, admins.php
-│   │       ├── vouchers/index.php
-│   │       ├── payments/index.php
-│   │       ├── content/banners.php, posts.php, contacts.php
-│   │       └── reports/index.php
-│   │
-│   └── Core/
-│       ├── Database.php
-│       ├── Router.php
-│       ├── Request.php
-│       ├── Session.php
-│       ├── Auth.php
-│       └── Validator.php
-│
-├── config/
-│   ├── database.php
-│   └── app.php
-│
-├── database/
-│   ├── schema.sql
-│   ├── seed.sql
-│   ├── init.php
-│   └── generate_assets.php
-│
-├── public/
-│   ├── assets/
-│   │   ├── css/style.css, admin.css, auth.css
-│   │   ├── js/main.js, admin.js
-│   │   ├── images/
-│   │   └── uploads/
-│   ├── index.php
-│   └── .htaccess
-│
-├── routes/
-│   └── web.php
-│
-├── storage/
-│   └── logs/
-│
-├── tests/
-│   └── test_system.php
-│
-├── .env
-├── .env.example
-├── .gitignore
-├── composer.json
+│   │       ├── dashboard.js    # Biểu đồ Canvas, tính toán số liệu thống kê thời gian thực
+│   │       ├── products.js     # CRUD xe máy điện và quản lý biến thể màu sắc
+│   │       ├── categories.js   # CRUD danh mục phân khúc và thương hiệu đối tác
+│   │       ├── orders.js       # Quản lý vòng đời đơn hàng và thanh toán
+│   │       ├── customers.js    # Khóa và mở khóa tài khoản người dùng
+│   │       ├── vouchers.js     # Tạo và chỉnh sửa mã giảm giá
+│   │       └── reports.js      # Tính toán báo cáo và tạo tải xuống file CSV
+│   └── images/                 # Thư viện hình ảnh xe điện PNG sắc nét, banner và tin tức
 └── README.md
 ```
 
 ---
 
-## 4. HƯỚNG DẪN CÀI ĐẶT & CHẠY DỰ ÁN
+## 3. CÁC TÍNH NĂNG VÀ NGHIỆP VỤ MÔ PHỎNG NỔI BẬT
 
-### Yêu cầu hệ thống:
-- PHP >= 8.0 (Đã kiểm thử trên PHP 8.1.10 trong Laragon).
-- MySQL >= 8.0 (InnoDB, utf8mb4).
-- Tiện ích mở rộng PHP: `pdo`, `pdo_mysql`, `gd`, `session`, `fileinfo`.
+### A. Khu Vực Khách Hàng (Client Store)
+1. **Trang Chủ (`index.html`)**:
+   - Slider trình diễn banner chuyển động mượt mà với thông số 99 km/h, 150 km, Pin LFP.
+   - Thẻ danh mục phân khúc trực quan.
+   - Danh sách mẫu xe nổi bật (Featured), xe bán chạy (Bestsellers), xe mới ra mắt (New arrivals).
+   - Bảng so sánh chi phí thực tế 1 năm: Tiết kiệm gần 10 triệu đồng so với xe xăng.
+   - Cẩm nang tin tức & kinh nghiệm sử dụng xe điện.
+   - Footer thông tin showroom, bảo hành 5 năm, hotline 1900 6868.
 
-### Các bước khởi tạo:
-1. Mở Laragon và nhấn **Start All** (khởi động Apache và MySQL).
-2. Chạy lệnh tạo database và nạp dữ liệu mẫu:
-   ```powershell
-   php database/init.php
-   ```
-3. Tạo hình ảnh đồ họa xe máy điện:
-   ```powershell
-   php database/generate_assets.php
-   ```
-4. Chạy kiểm thử tự động toàn hệ thống:
-   ```powershell
-   php tests/test_system.php
-   ```
-5. Truy cập website:
-   - Qua Laragon: `http://localhost/DuAN/` hoặc `http://duan.test/`
-   - Hoặc qua PHP Built-in Server:
-     ```powershell
-     php -S localhost:8000 -t public
-     ```
-     Sau đó mở trình duyệt tại `http://localhost:8000`
+2. **Danh Sách Sản Phẩm (`products.html`)**:
+   - Hiển thị đầy đủ 8 mẫu xe điện đỉnh cao: Theon S, Vento S, Klara S2, Feliz S, Evo 200, Evo 200 Lite, Impes Sport, Apex X Hyper-E.
+   - Lọc theo phân khúc danh mục, thương hiệu, khoảng giá (Dưới 20tr, 20-35tr, 35-50tr, trên 50tr), vận tốc tối đa (dưới 50km/h cho học sinh, 50-80km/h, trên 80km/h).
+   - Tìm kiếm thời gian thực theo tên xe hoặc mã SKU.
+   - Sắp xếp giá tăng dần, giảm dần, tốc độ tối đa, quãng đường dài nhất.
+   - Phân trang thuần JavaScript (Client-side Pagination).
+
+3. **Chi Tiết Sản Phẩm (`product-detail.html`)**:
+   - Thư viện ảnh xe sắc nét kèm ảnh góc phụ.
+   - **Bộ chọn biến thể thông minh**: Chọn màu sắc ngoại thất (vòng tròn màu trực quan) và phiên bản xe.
+   - **Tự động cập nhật mức giá và số lượng tồn kho** tương ứng với biến thể được chọn.
+   - Bảng thông số kỹ thuật chi tiết: Tốc độ tối đa, quãng đường di chuyển 1 lần sạc, công suất động cơ, loại pin LFP, dung lượng kWh, thời gian sạc, chuẩn chống nước IP67 lội nước 0.5m.
+   - Nút **Thêm Vào Giỏ** và **Mua Ngay** (kiểm soát số lượng tồn kho, thông báo Toast).
+   - Gợi ý các dòng xe cùng phân khúc.
+
+4. **Giỏ Hàng (`cart.html`)**:
+   - Hiển thị danh sách xe đã chọn, màu sắc, đơn giá, nút tăng/giảm số lượng (+ / -) và xóa sản phẩm.
+   - Nhập mã giảm giá Voucher (`ESFAST2026`, `VIPXANH`, `FREESHIP`) với kiểm tra tự động giá trị đơn hàng tối thiểu.
+   - Tính toán tạm tính, giảm giá và tổng thanh toán.
+
+5. **Thanh Toán & Đặt Xe (`checkout.html`)**:
+   - Tự động điền trước thông tin người nhận nếu khách đã đăng nhập.
+   - Lựa chọn hình thức thanh toán mô phỏng: Tiền mặt khi giao xe (COD), Chuyển khoản ngân hàng Vietcombank mô phỏng, Cổng thanh toán VNPAY mô phỏng.
+   - Tạo mã đơn hàng tự động định dạng `ESF-YYYYMMDD-XXX`.
+   - **Tự động trừ số lượng tồn kho mô phỏng** trong LocalStorage.
+   - Hiển thị Modal chúc mừng đặt xe thành công kèm mã đơn và thông tin chi tiết.
+
+6. **Theo Dõi Đơn Hàng (`orders.html`)**:
+   - Hiển thị các đơn đặt mua xe của khách hàng.
+   - Xem chi tiết đơn hàng qua Modal.
+   - **Cho phép khách hàng hủy đơn hàng** khi đơn đang ở trạng thái chuẩn bị xe (`processing`), tự động hoàn trả số lượng tồn kho của mẫu xe vào hệ thống.
+
+7. **Tài Khoản Cá Nhân (`account.html`)**:
+   - Xem và cập nhật họ tên, email, số điện thoại, địa chỉ nhận bàn giao xe.
+   - Đổi mật khẩu tài khoản với xác thực mật khẩu cũ.
+   - Đăng xuất an toàn.
+
+8. **Trang Giới Thiệu & Liên Hệ (`about.html`, `contact.html`)**:
+   - Giới thiệu 3 trụ cột công nghệ ESFAST (Pin LFP, Chống nước IP67, ESFAST OS).
+   - Biểu mẫu đăng ký lái thử xe miễn phí tại 150+ showroom toàn quốc với thông báo phản hồi tức thì.
 
 ---
-*Phát triển bởi Senior Full-stack PHP Developer & UI/UX Designer cho dự án ESFAST E-Commerce.*
+
+### B. Khu Vực Quản Trị Viên (Admin Control Panel – `admin/`)
+*Được bảo vệ bằng Route Guard: Chỉ tài khoản có vai trò `admin` mới được quyền truy cập.*
+
+1. **Dashboard (`admin/index.html`)**:
+   - Thẻ thống kê KPI: Tổng doanh thu mô phỏng, tổng đơn hàng, số mẫu xe đang bán, số thành viên khách hàng.
+   - Bảng phân loại trạng thái đơn: Chuẩn bị xe, Đang giao xe, Hoàn thành, Đã hủy.
+   - **Biểu đồ doanh thu 6 tháng bằng Canvas HTML5 thuần**, tự động cập nhật theo các đơn hàng mới.
+   - Danh sách đơn đặt mua xe mới nhất và top các mẫu xe bán chạy nhất.
+
+2. **Quản Lý Xe & Biến Thể (`admin/products.html`)**:
+   - Danh sách toàn bộ xe điện, tìm kiếm và lọc danh mục.
+   - Thêm mới mẫu xe với đầy đủ thông số kỹ thuật, chọn ảnh đại diện.
+   - Chỉnh sửa và xóa mẫu xe.
+   - Bật/tắt trạng thái kinh doanh với 1 click.
+   - **Quản lý biến thể màu sắc (Variants Modal)**: Thêm biến thể màu với bảng chọn mã màu HEX, phiên bản, giá riêng và số lượng tồn kho riêng.
+
+3. **Quản Lý Danh Mục & Hãng (`admin/categories.html`)**:
+   - CRUD danh mục phân khúc xe (Xe cao cấp, Xe đô thị, Xe học sinh sinh viên, Xe thể thao).
+   - CRUD thương hiệu đối tác.
+
+4. **Quản Lý Đơn Hàng (`admin/orders.html`)**:
+   - Tìm kiếm đơn theo mã `ESF-...`, tên khách, số điện thoại.
+   - Lọc theo trạng thái đơn và trạng thái thanh toán.
+   - Xem chi tiết đơn hàng trong Modal.
+   - **Chuyển đổi trạng thái đơn hàng**: Chuẩn bị xe -> Đang giao -> Hoàn thành -> Đã hủy (tự động phục hồi kho nếu hủy).
+   - Cập nhật trạng thái thanh toán: Đã thanh toán / Chưa thanh toán.
+
+5. **Quản Lý Khách Hàng (`admin/customers.html`)**:
+   - Danh sách tài khoản người dùng, xem số lượng đơn hàng đã đặt.
+   - **Khóa và mở khóa tài khoản khách hàng** chỉ với 1 click.
+
+6. **Quản Lý Voucher (`admin/vouchers.html`)**:
+   - Tạo mã giảm giá mới: Giảm theo % hoặc số tiền cố định, đơn tối thiểu, số lượt dùng.
+   - Chỉnh sửa, bật/tắt hoặc xóa voucher.
+
+7. **Quản Lý Banner (`admin/banners.html`)**:
+   - Quản lý các banner slider trên trang chủ, thay đổi hình ảnh, tiêu đề, liên kết.
+
+8. **Giao Dịch Thanh Toán (`admin/payments.html`)**:
+   - Bảng đối soát các giao dịch COD, Chuyển khoản, Cổng trực tuyến mô phỏng.
+
+9. **Báo Cáo & Xuất Dữ Liệu CSV (`admin/reports.html`)**:
+   - Thống kê doanh thu, đơn hàng, đơn hủy, giá trị trung bình theo kỳ (Toàn thời gian, Tháng này, Năm nay).
+   - **Tính năng xuất báo cáo ra file Excel / CSV (UTF-8 BOM)** chạy trực tiếp trên trình duyệt bằng JavaScript thuần.
+
+10. **Cài Đặt Hệ Thống (`admin/settings.html`)**:
+    - Chỉnh sửa hotline, thông tin thương hiệu.
+    - **Nút khôi phục dữ liệu demo mẫu**: Đưa toàn bộ hệ sinh thái dữ liệu về trạng thái ban đầu chỉ với 1 click.
+
+---
+
+## 4. HƯỚNG DẪN CHẠY DỰ ÁN
+
+Không cần cài đặt Node.js, không cần Apache/PHP hay bất kỳ server nào:
+1. Mở thư mục dự án `c:\laragon\www\DuAN\` (hoặc mở trong VS Code).
+2. Nhấp đúp chuột trực tiếp vào file `index.html` để mở trên trình duyệt (Chrome, Edge, Firefox, Cốc Cốc...).
+3. Hoặc nhấn chuột phải vào `index.html` chọn **Open with Live Server** trong VS Code.
+4. Trải nghiệm đầy đủ quy trình mua hàng, thanh toán mô phỏng, sau đó đăng nhập tài khoản Quản trị `admin` để quản lý đơn hàng và xem thống kê!
+ài khoản Khách hàng (Customer):
+Tài khoản: customer
+Mật khẩu: 123456
+Tài khoản Quản trị viên (Admin):
+Tài khoản: admin
+Mật khẩu: admin123

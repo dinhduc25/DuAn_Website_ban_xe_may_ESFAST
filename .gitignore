@@ -1,8 +1,0 @@
-.env
-vendor/
-storage/logs/*.log
-!storage/logs/.gitkeep
-public/assets/uploads/*
-!public/assets/uploads/.gitkeep
-.DS_Store
-Thumbs.db

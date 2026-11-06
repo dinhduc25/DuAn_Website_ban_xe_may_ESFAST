@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Banner & Nội Dung – ESFAST Admin</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <span class="bolt-icon"><i class="fas fa-bolt"></i></span>
+                    <span style="font-weight: 800; font-size: 1.25rem;">ES<span style="color: var(--accent);">FAST</span></span>
+                </a>
+            </div>
+
+            <div class="admin-sidebar-menu" style="padding: 16px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1;">
+                <a href="index.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-tachometer-alt" style="width: 20px;"></i> Dashboard
+                </a>
+                <a href="products.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-motorcycle" style="width: 20px;"></i> Quản Lý Xe & Biến Thể
+                </a>
+                <a href="categories.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-folder" style="width: 20px;"></i> Danh Mục & Hãng
+                </a>
+                <a href="orders.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-shopping-bag" style="width: 20px;"></i> Quản Lý Đơn Hàng
+                </a>
+                <a href="customers.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-users" style="width: 20px;"></i> Khách Hàng
+                </a>
+                <a href="vouchers.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-ticket-alt" style="width: 20px;"></i> Quản Lý Voucher
+                </a>
+                <a href="banners.html" class="sidebar-link active" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #ffffff; background: #0052cc; font-weight: 700; text-decoration: none;">
+                    <i class="fas fa-images" style="width: 20px;"></i> Banner & Nội Dung
+                </a>
+                <a href="payments.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-credit-card" style="width: 20px;"></i> Giao Dịch Thanh Toán
+                </a>
+                <a href="reports.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-chart-line" style="width: 20px;"></i> Báo Cáo Doanh Thu
+                </a>
+                <a href="settings.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-cog" style="width: 20px;"></i> Cài Đặt Hệ Thống
+                </a>
+            </div>
+
+            <div style="padding: 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 8px;">
+                <a href="../index.html" target="_blank" style="display: flex; align-items: center; gap: 10px; color: #38bdf8; font-size: 0.88rem; text-decoration: none; padding: 8px 12px; border-radius: 6px; background: rgba(56,189,248,0.1);">
+                    <i class="fas fa-external-link-alt"></i> Xem Trang Khách
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <div style="flex: 1; display: flex; flex-direction: column; min-width: 0;">
+            <!-- TOPBAR -->
+            <header style="background: #ffffff; height: 70px; border-bottom: 1px solid #e2e8f0; padding: 0 30px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">Banner Trang Chủ & Nội Dung</h2>
+                    <span style="font-size: 0.8rem; color: #64748b;">Quản lý slider quảng bá các dòng xe Theon, Evo và bài viết cẩm nang</span>
+                </div>
+                <button type="button" onclick="openAddBannerModal()" class="btn btn-primary" style="padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; cursor: pointer;">
+                    <i class="fas fa-plus"></i> Thêm Banner Mới
+                </button>
+            </header>
+
+            <!-- BODY -->
+            <main style="padding: 30px; flex: 1; overflow-y: auto;">
+                <!-- Banners Table -->
+                <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 32px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                    <div style="padding: 18px 24px; border-bottom: 1px solid #f1f5f9; font-size: 1.1rem; font-weight: 700; color: #0f172a;">
+                        <i class="fas fa-sliders-h text-primary"></i> Banner Slider Trang Chủ
+                    </div>
+                    <div class="admin-table-responsive">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #64748b; font-size: 0.82rem; text-transform: uppercase;">
+                                    <th style="padding: 12px 16px;">Ảnh Banner</th>
+                                    <th style="padding: 12px 16px;">Tiêu Đề / Huy Hiệu</th>
+                                    <th style="padding: 12px 16px;">Phụ Đề</th>
+                                    <th style="padding: 12px 16px;">Liên Kết Trỏ Đến</th>
+                                    <th style="padding: 12px 16px;">Trạng Thái</th>
+                                    <th style="padding: 12px 16px; text-align: right;">Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminBannersTableBody">
+                                <!-- Injected via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Articles / Posts Quick Preview -->
+                <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                    <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 16px;">
+                        <i class="fas fa-newspaper text-primary"></i> Bài Viết & Cẩm Nang Xe Máy Điện
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #f8fafc;">
+                            <strong style="color: #0f172a; font-size: 0.95rem;">So sánh chi phí nuôi xe điện và xe xăng</strong>
+                            <p style="font-size: 0.82rem; color: #64748b; margin: 6px 0 10px;">Tiết kiệm hơn 7 triệu đồng tiền xăng sau 1 năm sử dụng...</p>
+                            <span style="font-size: 0.75rem; background: #ecfdf5; color: #059669; font-weight: 700; padding: 3px 8px; border-radius: 4px;">Đã xuất bản</span>
+                        </div>
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #f8fafc;">
+                            <strong style="color: #0f172a; font-size: 0.95rem;">Công nghệ Pin LFP: An toàn và tuổi thọ 2000 chu kỳ</strong>
+                            <p style="font-size: 0.82rem; color: #64748b; margin: 6px 0 10px;">Cấu trúc tinh thể bền bỉ, chống cháy nổ tuyệt đối...</p>
+                            <span style="font-size: 0.75rem; background: #ecfdf5; color: #059669; font-weight: 700; padding: 3px 8px; border-radius: 4px;">Đã xuất bản</span>
+                        </div>
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #f8fafc;">
+                            <strong style="color: #0f172a; font-size: 0.95rem;">Hướng dẫn bảo dưỡng xe máy điện ESFAST định kỳ</strong>
+                            <p style="font-size: 0.82rem; color: #64748b; margin: 6px 0 10px;">Kiểm tra má phanh, áp suất lốp và cập nhật firmware...</p>
+                            <span style="font-size: 0.75rem; background: #ecfdf5; color: #059669; font-weight: 700; padding: 3px 8px; border-radius: 4px;">Đã xuất bản</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- BANNER MODAL -->
+    <div id="bannerModal" style="display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.7); z-index: 10000; align-items: center; justify-content: center; padding: 20px;">
+        <div style="background: #ffffff; border-radius: 16px; width: 100%; max-width: 550px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); overflow: hidden;">
+            <div style="padding: 18px 24px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                <h3 id="bannerModalTitle" style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #0f172a;">Thêm Mới Banner</h3>
+                <button type="button" onclick="closeBannerModal()" style="background: none; border: none; font-size: 1.5rem; color: #64748b; cursor: pointer;">&times;</button>
+            </div>
+            <form id="bannerForm" onsubmit="handleSaveBanner(event)" style="padding: 24px;">
+                <div style="margin-bottom: 14px;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Tiêu Đề Banner *</label>
+                    <input type="text" name="title" required placeholder="Ví dụ: ESFAST THEON S – ĐỈNH CAO XE ĐIỆN" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Huy hiệu nổi bật</label>
+                        <input type="text" name="badge" value="SIÊU PHẨM CÔNG NGHỆ" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Ảnh Banner</label>
+                        <select name="image" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem; background: #ffffff;">
+                            <option value="images/banner_theon_s.jpg">banner_theon_s.jpg</option>
+                            <option value="images/banner_evo200.jpg">banner_evo200.jpg</option>
+                            <option value="images/banner_green_summer.jpg">banner_green_summer.jpg</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-bottom: 14px;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Mô Tả Ngắn</label>
+                    <input type="text" name="subtitle" required placeholder="Tốc độ 99 km/h • Động cơ 7100W • Phanh ABS" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                </div>
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Liên Kết Nút Bấm</label>
+                    <input type="text" name="link" value="products.html" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 12px;">
+                    <button type="button" onclick="closeBannerModal()" class="btn btn-outline" style="padding: 9px 20px; border-radius: 8px;">Hủy</button>
+                    <button type="submit" class="btn btn-primary" style="padding: 9px 24px; border-radius: 8px; font-weight: 700;">Lưu Banner</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script>
+        let editingBannerId = null;
+
+        function renderBannersTable() {
+            const banners = getBanners();
+            const tbody = document.getElementById('adminBannersTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = banners.map(b => `
+                <tr style="border-bottom: 1px solid #f1f5f9;">
+                    <td style="padding: 12px 16px;">
+                        <img src="../${b.image}" alt="${b.title}" style="width: 80px; height: 45px; object-fit: cover; border-radius: 6px;">
+                    </td>
+                    <td style="padding: 12px 16px;">
+                        <div style="font-weight: 700; color: #0f172a;">${b.title}</div>
+                        <span style="font-size: 0.75rem; background: rgba(0,82,204,0.1); color: #0052cc; padding: 2px 8px; border-radius: 4px; font-weight: 600;">${b.badge || 'NỔI BẬT'}</span>
+                    </td>
+                    <td style="padding: 12px 16px; font-size: 0.85rem; color: #64748b;">${b.subtitle}</td>
+                    <td style="padding: 12px 16px; font-size: 0.85rem; color: #0052cc;">${b.link}</td>
+                    <td style="padding: 12px 16px;">
+                        <button type="button" onclick="toggleBannerStatus(${b.id})" style="border: none; background: ${b.isActive ? '#ecfdf5' : '#fef2f2'}; color: ${b.isActive ? '#047857' : '#b91c1c'}; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">
+                            ${b.isActive ? 'Đang hiển thị' : 'Đã ẩn'}
+                        </button>
+                    </td>
+                    <td style="padding: 12px 16px; text-align: right;">
+                        <button type="button" onclick="deleteBanner(${b.id})" style="background: #fee2e2; border: 1px solid #fca5a5; color: #ef4444; padding: 5px 10px; border-radius: 6px; cursor: pointer;">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function openAddBannerModal() {
+            editingBannerId = null;
+            document.getElementById('bannerForm').reset();
+            document.getElementById('bannerModal').style.display = 'flex';
+        }
+
+        function closeBannerModal() {
+            document.getElementById('bannerModal').style.display = 'none';
+        }
+
+        function handleSaveBanner(e) {
+            e.preventDefault();
+            const form = e.target;
+            const banners = getBanners();
+
+            const newBanner = {
+                id: Date.now(),
+                title: form.title.value.trim(),
+                subtitle: form.subtitle.value.trim(),
+                badge: form.badge.value.trim(),
+                image: form.image.value,
+                link: form.link.value.trim(),
+                isActive: true
+            };
+
+            banners.push(newBanner);
+            saveBanners(banners);
+            showToast('Đã thêm banner mới vào trang chủ!', 'success');
+            closeBannerModal();
+            renderBannersTable();
+        }
+
+        function toggleBannerStatus(id) {
+            const banners = getBanners();
+            const b = banners.find(x => x.id === Number(id));
+            if (b) {
+                b.isActive = !b.isActive;
+                saveBanners(banners);
+                renderBannersTable();
+            }
+        }
+
+        function deleteBanner(id) {
+            if (confirm('Xóa banner này khỏi trang chủ?')) {
+                let banners = getBanners();
+                banners = banners.filter(x => x.id !== Number(id));
+                saveBanners(banners);
+                renderBannersTable();
+                showToast('Đã xóa banner!', 'info');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            requireAdminAuth('../login.html');
+            renderBannersTable();
+        });
+    </script>
+</body>
+</html>

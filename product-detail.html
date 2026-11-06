@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Xe Máy Điện – ESFAST</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- TOP HEADER BAR -->
+    <div style="background: #0b1329; color: #94a3b8; font-size: 0.82rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <span><i class="fas fa-headset text-primary" style="margin-right: 6px;"></i> Hotline: <strong>1900 6868</strong></span>
+                <span class="d-none-sm"><i class="fas fa-map-marker-alt text-primary" style="margin-right: 6px;"></i> 150+ Showroom toàn quốc</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <span style="color: #00d2ff;"><i class="fas fa-shield-alt"></i> Bảo hành 5 năm</span>
+                <span style="color: #38bdf8;">|</span>
+                <span style="color: #cbd5e1;"><i class="fas fa-truck-moving"></i> Miễn phí bàn giao tại nhà</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header style="background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <span style="font-size: 1.45rem; font-weight: 800; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                    <span style="display: block; font-size: 0.65rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Electric Vehicle</span>
+                </div>
+            </a>
+
+            <nav class="header-nav" style="display: flex; align-items: center; gap: 22px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-home"></i> Trang Chủ</a>
+                <a href="products.html" class="nav-link active" style="font-weight: 600; color: #0052cc;"><i class="fas fa-motorcycle"></i> Xe Máy Điện</a>
+                <a href="products.html?category=1" class="nav-link" style="font-weight: 600; color: #334155;">Dòng Cao Cấp</a>
+                <a href="products.html?promo=1" class="nav-link" style="font-weight: 600; color: #ef4444;"><i class="fas fa-tags"></i> Khuyến Mãi Hot</a>
+                <a href="about.html" class="nav-link" style="font-weight: 600; color: #334155;">Về ESFAST</a>
+                <a href="contact.html" class="nav-link" style="font-weight: 600; color: #334155;">Liên Hệ</a>
+            </nav>
+
+            <div class="header-search-wrap" style="flex: 0 1 260px;">
+                <form class="header-search-form" style="position: relative;">
+                    <input type="text" name="search" placeholder="Tìm dòng xe, Theon..." style="width: 100%; padding: 9px 40px 9px 16px; border-radius: 999px; border: 1px solid #cbd5e1; outline: none; font-size: 0.88rem;">
+                    <button type="submit" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #0052cc; cursor: pointer;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="cart.html" style="position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #f1f5f9; color: #0f172a; text-decoration: none;">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.15rem;"></i>
+                    <span class="cart-count-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center;">0</span>
+                </a>
+                <div id="headerAuthContainer"></div>
+                <button id="mobileMenuToggle" class="mobile-menu-btn" style="display: none; background: none; border: none; font-size: 1.4rem; color: #0f172a; cursor: pointer; padding: 4px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div style="background: #f1f5f9; padding: 14px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem;">
+        <div class="container" style="display: flex; align-items: center; gap: 8px; color: #64748b;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Trang chủ</a>
+            <span>/</span>
+            <a href="products.html" style="color: #64748b; text-decoration: none;">Xe máy điện</a>
+            <span>/</span>
+            <span id="breadcrumbBikeName" style="color: #0052cc; font-weight: 600;">Chi tiết sản phẩm</span>
+        </div>
+    </div>
+
+    <!-- MAIN PRODUCT DETAIL -->
+    <main style="padding: 40px 0 70px; background: #ffffff;">
+        <div class="container">
+            <div id="productDetailContainer">
+                <!-- Dynamically rendered via JavaScript -->
+            </div>
+
+            <!-- RELATED PRODUCTS -->
+            <div style="margin-top: 70px; padding-top: 40px; border-top: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;">
+                    <h3 style="font-size: 1.6rem; font-weight: 800; color: #0f172a;">Các Dòng Xe Cùng Phân Khúc</h3>
+                    <a href="products.html" style="color: #0052cc; font-weight: 600; text-decoration: none;">Xem tất cả xe <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div id="relatedProductsGrid" class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 24px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;">
+                <p>© 2026 ESFAST E-Scooter Vietnam. All rights reserved.</p>
+                <p><a href="index.html" style="color: #00d2ff; text-decoration: none;">Trang chủ</a> | <a href="products.html" style="color: #00d2ff; text-decoration: none;">Sản phẩm</a> | <a href="contact.html" style="color: #00d2ff; text-decoration: none;">Liên hệ</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || 1;
+            const product = getProductById(productId);
+
+            if (!product) {
+                document.getElementById('productDetailContainer').innerHTML = `
+                    <div style="text-align: center; padding: 80px 20px;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #f59e0b; margin-bottom: 16px;"></i>
+                        <h2 style="font-size: 1.6rem; color: #0f172a;">Không tìm thấy thông tin dòng xe này!</h2>
+                        <p style="color: #64748b; margin-top: 8px;">Vui lòng quay lại danh sách sản phẩm để chọn mẫu xe khác.</p>
+                        <a href="products.html" class="btn btn-primary" style="display: inline-block; margin-top: 20px; padding: 10px 24px; border-radius: 999px;">Quay lại danh mục</a>
+                    </div>
+                `;
+                return;
+            }
+
+            document.getElementById('breadcrumbBikeName').textContent = product.name;
+            document.title = `${product.name} – Xe Máy Điện ESFAST`;
+
+            let selectedVariant = product.variants && product.variants.length > 0 ? product.variants[0] : null;
+            let currentQuantity = 1;
+
+            function renderDetail() {
+                const currentPrice = selectedVariant ? selectedVariant.price : (product.salePrice || product.price);
+                const currentStock = selectedVariant ? selectedVariant.stock : product.stockQuantity;
+                const isOutOfStock = currentStock <= 0;
+
+                const detailContainer = document.getElementById('productDetailContainer');
+                detailContainer.innerHTML = `
+                    <div class="product-detail-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: flex-start;">
+                        
+                        <!-- Left: Photos & Gallery -->
+                        <div>
+                            <div style="background: #f8fafc; border-radius: 16px; border: 1px solid #e2e8f0; padding: 40px; text-align: center; position: relative;">
+                                <img id="mainBikeImg" src="${product.image}" alt="${product.name}" style="max-height: 380px; width: 100%; object-fit: contain; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));">
+                                <span style="position: absolute; top: 16px; left: 16px; background: #0052cc; color: #ffffff; font-size: 0.8rem; font-weight: 700; padding: 6px 12px; border-radius: 6px;">
+                                    PIN LFP CHỐNG CHÁY NỔ
+                                </span>
+                            </div>
+
+                            <!-- Thumbnails -->
+                            <div style="display: flex; gap: 12px; margin-top: 16px;">
+                                <div onclick="document.getElementById('mainBikeImg').src='${product.image}'" style="width: 80px; height: 60px; background: #f8fafc; border: 2px solid #0052cc; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 4px;">
+                                    <img src="${product.image}" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                </div>
+                                <div onclick="document.getElementById('mainBikeImg').src='images/bike_fallback.png'" style="width: 80px; height: 60px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 4px;">
+                                    <img src="images/bike_fallback.png" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                </div>
+                            </div>
+
+                            <!-- Highlights Icons -->
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; text-align: center;">
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 10px;">
+                                    <i class="fas fa-shield-alt text-primary" style="font-size: 1.4rem; margin-bottom: 6px;"></i>
+                                    <div style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">Bảo hành 5 năm</div>
+                                    <div style="font-size: 0.72rem; color: #64748b;">Chính hãng ESFAST</div>
+                                </div>
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 10px;">
+                                    <i class="fas fa-tools text-primary" style="font-size: 1.4rem; margin-bottom: 6px;"></i>
+                                    <div style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">Cứu hộ 24/7</div>
+                                    <div style="font-size: 0.72rem; color: #64748b;">Hỗ trợ toàn quốc</div>
+                                </div>
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 10px;">
+                                    <i class="fas fa-truck text-primary" style="font-size: 1.4rem; margin-bottom: 6px;"></i>
+                                    <div style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">Giao xe tận nơi</div>
+                                    <div style="font-size: 0.72rem; color: #64748b;">Miễn phí vận chuyển</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Info, Price, Variants & CTA -->
+                        <div>
+                            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 6px;">Mã SKU: <strong>${selectedVariant ? selectedVariant.sku : product.sku}</strong></div>
+                            <h1 style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: 12px; line-height: 1.2;">
+                                ${product.name}
+                            </h1>
+                            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6; margin-bottom: 20px;">
+                                ${product.description}
+                            </p>
+
+                            <!-- Price Display -->
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: baseline; gap: 16px;">
+                                <div style="font-size: 2rem; font-weight: 800; color: #0052cc;">
+                                    ${formatMoney(currentPrice)}
+                                </div>
+                                ${product.salePrice && product.price > product.salePrice ? `
+                                    <div style="font-size: 1.1rem; color: #94a3b8; text-decoration: line-through;">
+                                        ${formatMoney(product.price)}
+                                    </div>
+                                    <span style="background: #fef2f2; color: #dc2626; font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 999px;">
+                                        Tiết kiệm ${formatMoney(product.price - currentPrice)}
+                                    </span>
+                                ` : ''}
+                            </div>
+
+                            <!-- Variants: Colors -->
+                            ${product.variants && product.variants.length > 0 ? `
+                                <div style="margin-bottom: 22px;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                        <span style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">Chọn Màu Sắc & Phiên Bản:</span>
+                                        <span style="font-size: 0.85rem; color: #0052cc; font-weight: 600;">${selectedVariant.colorName}</span>
+                                    </div>
+                                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                        ${product.variants.map(v => `
+                                            <button type="button" onclick="selectVariantById(${v.id})" style="border: 2px solid ${v.id === selectedVariant.id ? '#0052cc' : '#e2e8f0'}; background: #ffffff; padding: 8px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
+                                                <span style="width: 18px; height: 18px; border-radius: 50%; background: ${v.colorCode}; border: 1px solid rgba(0,0,0,0.15);"></span>
+                                                <span style="font-size: 0.88rem; font-weight: 600; color: #334155;">${v.colorName}</span>
+                                            </button>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            <!-- Quantity & Stock Status -->
+                            <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 28px;">
+                                <div>
+                                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Số Lượng Đặt:</label>
+                                    <div style="display: inline-flex; align-items: center; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden;">
+                                        <button type="button" onclick="changeQty(-1)" style="width: 38px; height: 38px; border: none; background: #f8fafc; font-size: 1.1rem; cursor: pointer; color: #334155;">-</button>
+                                        <input type="text" id="qtyInput" value="${currentQuantity}" readonly style="width: 46px; height: 38px; border: none; text-align: center; font-weight: 700; font-size: 0.95rem; outline: none;">
+                                        <button type="button" onclick="changeQty(1)" style="width: 38px; height: 38px; border: none; background: #f8fafc; font-size: 1.1rem; cursor: pointer; color: #334155;">+</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Tình Trạng Kho:</label>
+                                    ${isOutOfStock ? `
+                                        <span style="color: #ef4444; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                                            <i class="fas fa-times-circle"></i> Tạm hết hàng
+                                        </span>
+                                    ` : `
+                                        <span style="color: #10b981; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                                            <i class="fas fa-check-circle"></i> Còn hàng (${currentStock} chiếc sẵn sàng)
+                                        </span>
+                                    `}
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="detail-cta-row" style="display: flex; gap: 14px; margin-bottom: 30px;">
+                                <button type="button" onclick="handleAddToCartClick()" ${isOutOfStock ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''} class="btn btn-outline" style="flex: 1; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                    <i class="fas fa-cart-plus"></i> Thêm Vào Giỏ
+                                </button>
+                                <button type="button" onclick="handleBuyNowClick()" ${isOutOfStock ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''} class="btn btn-primary" style="flex: 1.2; background: linear-gradient(135deg, #0052cc, #00d2ff); border: none; color: #ffffff; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 18px rgba(0,82,204,0.35);">
+                                    <i class="fas fa-bolt"></i> Mua Ngay
+                                </button>
+                            </div>
+
+                            <!-- Tech Specs Table -->
+                            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden;">
+                                <div style="background: #f8fafc; padding: 14px 20px; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #0f172a; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-cogs text-primary"></i> Thông Số Kỹ Thuật Chi Tiết
+                                </div>
+                                <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 16px; color: #64748b; width: 45%;">Tốc độ tối đa</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.maxSpeed} km/h</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Quãng đường / 1 lần sạc</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0052cc;">${product.specs.maxDistance} km</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Công suất động cơ</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.motorPower}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Loại pin trang bị</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.batteryType}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Dung lượng pin</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.batteryCapacity}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Thời gian sạc đầy</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.chargingTime}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Chuẩn chống nước</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #10b981;"><i class="fas fa-tint"></i> ${product.specs.waterproof}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;">
+                                            <td style="padding: 10px 16px; color: #64748b;">Dung tích cốp xe</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.trunkCapacity}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 10px 16px; color: #64748b;">Trọng lượng xe</td>
+                                            <td style="padding: 10px 16px; font-weight: 700; color: #0f172a;">${product.specs.weight}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            window.selectVariantById = function(variantId) {
+                if (product.variants) {
+                    selectedVariant = product.variants.find(v => v.id === Number(variantId));
+                    renderDetail();
+                }
+            };
+
+            window.changeQty = function(delta) {
+                const newQty = currentQuantity + delta;
+                if (newQty >= 1) {
+                    const currentStock = selectedVariant ? selectedVariant.stock : product.stockQuantity;
+                    if (newQty > currentStock) {
+                        showToast(`Số lượng tồn kho chỉ còn ${currentStock} chiếc!`, 'danger');
+                        return;
+                    }
+                    currentQuantity = newQty;
+                    const input = document.getElementById('qtyInput');
+                    if (input) input.value = currentQuantity;
+                }
+            };
+
+            window.handleAddToCartClick = function() {
+                const res = addToCart(product.id, selectedVariant ? selectedVariant.id : null, currentQuantity);
+                if (res.success) {
+                    showToast(res.message, 'success');
+                } else {
+                    showToast(res.message, 'danger');
+                }
+            };
+
+            window.handleBuyNowClick = function() {
+                const res = addToCart(product.id, selectedVariant ? selectedVariant.id : null, currentQuantity);
+                if (res.success) {
+                    window.location.href = 'checkout.html';
+                } else {
+                    showToast(res.message, 'danger');
+                }
+            };
+
+            renderDetail();
+
+            // Render Related Bikes
+            const allProducts = getProducts().filter(p => p.isActive && p.id !== product.id);
+            const related = allProducts.filter(p => p.categoryId === product.categoryId).slice(0, 4);
+            const relatedContainer = document.getElementById('relatedProductsGrid');
+            if (relatedContainer) {
+                const list = related.length > 0 ? related : allProducts.slice(0, 4);
+                relatedContainer.innerHTML = list.map(p => `
+                    <div class="product-card" style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                        <a href="product-detail.html?id=${p.id}" style="padding: 20px; display: block; text-align: center; background: #f8fafc;">
+                            <img src="${p.image}" alt="${p.name}" style="height: 160px; width: 100%; object-fit: contain; margin: 0 auto;">
+                        </a>
+                        <div style="padding: 16px; display: flex; flex-direction: column; flex: 1;">
+                            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px;">
+                                <a href="product-detail.html?id=${p.id}" style="color: #0f172a; text-decoration: none;">${p.name}</a>
+                            </h4>
+                            <div style="font-size: 1.15rem; font-weight: 800; color: #0052cc; margin-top: auto; margin-bottom: 12px;">
+                                ${formatMoney(p.salePrice || p.price)}
+                            </div>
+                            <a href="product-detail.html?id=${p.id}" class="btn btn-outline" style="text-align: center; font-size: 0.85rem; padding: 7px 12px; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                                Khám Phá Thêm
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

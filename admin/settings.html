@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài Đặt Hệ Thống – ESFAST Admin</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <span class="bolt-icon"><i class="fas fa-bolt"></i></span>
+                    <span style="font-weight: 800; font-size: 1.25rem;">ES<span style="color: var(--accent);">FAST</span></span>
+                </a>
+            </div>
+
+            <div class="admin-sidebar-menu" style="padding: 16px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1;">
+                <a href="index.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-tachometer-alt" style="width: 20px;"></i> Dashboard
+                </a>
+                <a href="products.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-motorcycle" style="width: 20px;"></i> Quản Lý Xe & Biến Thể
+                </a>
+                <a href="categories.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-folder" style="width: 20px;"></i> Danh Mục & Hãng
+                </a>
+                <a href="orders.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-shopping-bag" style="width: 20px;"></i> Quản Lý Đơn Hàng
+                </a>
+                <a href="customers.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-users" style="width: 20px;"></i> Khách Hàng
+                </a>
+                <a href="vouchers.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-ticket-alt" style="width: 20px;"></i> Quản Lý Voucher
+                </a>
+                <a href="banners.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-images" style="width: 20px;"></i> Banner & Nội Dung
+                </a>
+                <a href="payments.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-credit-card" style="width: 20px;"></i> Giao Dịch Thanh Toán
+                </a>
+                <a href="reports.html" class="sidebar-link" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #94a3b8; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-chart-line" style="width: 20px;"></i> Báo Cáo Doanh Thu
+                </a>
+                <a href="settings.html" class="sidebar-link active" style="display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-radius: 8px; color: #ffffff; background: #0052cc; font-weight: 700; text-decoration: none;">
+                    <i class="fas fa-cog" style="width: 20px;"></i> Cài Đặt Hệ Thống
+                </a>
+            </div>
+
+            <div style="padding: 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 8px;">
+                <a href="../index.html" target="_blank" style="display: flex; align-items: center; gap: 10px; color: #38bdf8; font-size: 0.88rem; text-decoration: none; padding: 8px 12px; border-radius: 6px; background: rgba(56,189,248,0.1);">
+                    <i class="fas fa-external-link-alt"></i> Xem Trang Khách
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <div style="flex: 1; display: flex; flex-direction: column; min-width: 0;">
+            <!-- TOPBAR -->
+            <header style="background: #ffffff; height: 70px; border-bottom: 1px solid #e2e8f0; padding: 0 30px; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0;">Cài Đặt Cửa Hàng & Dữ Liệu</h2>
+                    <span style="font-size: 0.8rem; color: #64748b;">Tùy chỉnh thương hiệu, hotline tổng đài và khôi phục dữ liệu demo mẫu</span>
+                </div>
+            </header>
+
+            <!-- BODY -->
+            <main style="padding: 30px; flex: 1; overflow-y: auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1000px;">
+                    <!-- General Settings -->
+                    <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                        <h3 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 20px;">
+                            <i class="fas fa-sliders-h text-primary"></i> Thông Tin Thương Hiệu
+                        </h3>
+                        <form onsubmit="handleSaveSettings(event)">
+                            <div style="margin-bottom: 14px;">
+                                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Tên Thương Hiệu</label>
+                                <input type="text" name="brandName" value="ESFAST Electric Vehicle" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                            </div>
+                            <div style="margin-bottom: 14px;">
+                                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Hotline Hỗ Trợ 24/7</label>
+                                <input type="text" name="hotline" value="1900 6868" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                            </div>
+                            <div style="margin-bottom: 14px;">
+                                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Email Tiếp Nhận</label>
+                                <input type="email" name="email" value="cskh@esfast.vn" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">Thời Hạn Bảo Hành Tiêu Chuẩn</label>
+                                <input type="text" name="warranty" value="5 năm chính hãng hoặc 50.000 km" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="padding: 10px 24px; border-radius: 8px; font-weight: 700;">
+                                <i class="fas fa-save"></i> Lưu Cấu Hình
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Factory Reset Demo Data -->
+                    <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                        <h3 style="font-size: 1.15rem; font-weight: 800; color: #ef4444; margin-bottom: 16px;">
+                            <i class="fas fa-history text-danger"></i> Khôi Phục Dữ Liệu Demo Gốc
+                        </h3>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin-bottom: 20px;">
+                            Nếu bạn đã thêm, sửa, xóa quá nhiều sản phẩm hoặc đơn hàng và muốn đưa hệ thống về dữ liệu mẫu khởi tạo ban đầu (8 mẫu xe điện, 4 danh mục, đơn hàng mẫu, voucher mẫu), hãy nhấn nút dưới đây.
+                        </p>
+                        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 24px; font-size: 0.82rem; color: #92400e;">
+                            <i class="fas fa-exclamation-triangle"></i> Lưu ý: Thao tác này sẽ đặt lại toàn bộ LocalStorage về giá trị mặc định của ESFAST.
+                        </div>
+                        <button type="button" onclick="handleResetFactoryData()" class="btn btn-danger" style="background: #ef4444; border: none; color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-sync-alt"></i> Khôi Phục Dữ Liệu Demo Mẫu
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script>
+        function handleSaveSettings(e) {
+            e.preventDefault();
+            alert('Đã lưu cấu hình cửa hàng thành công!');
+        }
+
+        function handleResetFactoryData() {
+            if (confirm('Bạn có chắc chắn muốn khôi phục toàn bộ dữ liệu mẫu ban đầu?')) {
+                localStorage.clear();
+                initStorage();
+                alert('Đã khôi phục thành công! Trang sẽ tải lại...');
+                window.location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            requireAdminAuth('../login.html');
+        });
+    </script>
+</body>
+</html>
