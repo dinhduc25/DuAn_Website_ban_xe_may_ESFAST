@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ & Đăng Ký Lái Thử Xe Điện – ESFAST</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- MAIN HEADER -->
+    <header style="background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <span style="font-size: 1.45rem; font-weight: 800; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                    <span style="display: block; font-size: 0.65rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Electric Vehicle</span>
+                </div>
+            </a>
+
+            <nav class="header-nav" style="display: flex; align-items: center; gap: 22px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-home"></i> Trang Chủ</a>
+                <a href="products.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-motorcycle"></i> Xe Máy Điện</a>
+                <a href="about.html" class="nav-link" style="font-weight: 600; color: #334155;">Về ESFAST</a>
+                <a href="contact.html" class="nav-link active" style="font-weight: 600; color: #0052cc;">Liên Hệ</a>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="cart.html" style="position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #f1f5f9; color: #0f172a; text-decoration: none;">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.15rem;"></i>
+                    <span class="cart-count-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center;">0</span>
+                </a>
+                <div id="headerAuthContainer"></div>
+                <button id="mobileMenuToggle" class="mobile-menu-btn" style="display: none; background: none; border: none; font-size: 1.4rem; color: #0f172a; cursor: pointer; padding: 4px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB & BANNER -->
+    <section style="background: #0f172a; color: #ffffff; padding: 48px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="container text-center" style="max-width: 680px; margin: 0 auto;">
+            <span style="color: #00d2ff; font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">KẾT NỐI VỚI ESFAST</span>
+            <h1 style="font-size: 2.4rem; font-weight: 800; margin: 10px 0 12px;">Liên Hệ & Trải Nghiệm Lái Thử Xe Điện</h1>
+            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Đăng ký lái thử miễn phí tại hệ thống 150+ showroom trên toàn quốc hoặc gửi yêu cầu tư vấn kỹ thuật.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT MAIN CONTENT -->
+    <main style="padding: 60px 0 80px; background: #f8fafc;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: flex-start;">
+                
+                <!-- Left: Contact Details & Showrooms -->
+                <div>
+                    <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                        <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 20px;">Hệ Thống Trụ Sở Chính</h3>
+
+                        <div style="display: flex; flex-direction: column; gap: 18px; font-size: 0.95rem;">
+                            <div style="display: flex; gap: 14px; align-items: flex-start;">
+                                <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(0,82,204,0.1); color: #0052cc; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <strong style="color: #0f172a;">Trụ sở Hà Nội:</strong>
+                                    <div style="color: #64748b; margin-top: 2px;">Tòa nhà ESFAST Tower, Lô B10 Quận Cầu Giấy, TP. Hà Nội</div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 14px; align-items: flex-start;">
+                                <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(0,82,204,0.1); color: #0052cc; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div>
+                                    <strong style="color: #0f172a;">Chi nhánh TP. Hồ Chí Minh:</strong>
+                                    <div style="color: #64748b; margin-top: 2px;">Tòa nhà Landmark 81, Phường 22, Quận Bình Thạnh, TP. HCM</div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 14px; align-items: flex-start;">
+                                <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(0,82,204,0.1); color: #0052cc; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <strong style="color: #0f172a;">Tổng đài chăm sóc khách hàng:</strong>
+                                    <div style="color: #0052cc; font-weight: 700; margin-top: 2px; font-size: 1.05rem;">1900 6868 (Miễn phí cước gọi 24/7)</div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 14px; align-items: flex-start;">
+                                <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(0,82,204,0.1); color: #0052cc; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <strong style="color: #0f172a;">Hộp thư điện tử:</strong>
+                                    <div style="color: #64748b; margin-top: 2px;">cskh@esfast.vn / support@esfast.vn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showroom Card -->
+                    <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 28px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">Showroom Trưng Bày Tiêu Biểu</h4>
+                        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+                            <div style="padding-bottom: 8px; border-bottom: 1px solid #f1f5f9;">
+                                <strong style="color: #0f172a;">Showroom Cầu Giấy (Hà Nội):</strong>
+                                <div style="color: #64748b;">Số 168 Cầu Giấy, Quan Hoa, Cầu Giấy - Hotline: 024.7777.8888</div>
+                            </div>
+                            <div style="padding-bottom: 8px; border-bottom: 1px solid #f1f5f9;">
+                                <strong style="color: #0f172a;">Showroom Quận 1 (TP.HCM):</strong>
+                                <div style="color: #64748b;">Số 45 Lê Lợi, P. Bến Nghé, Quận 1 - Hotline: 028.7777.9999</div>
+                            </div>
+                            <div>
+                                <strong style="color: #0f172a;">Showroom Hải Châu (Đà Nẵng):</strong>
+                                <div style="color: #64748b;">Số 250 Nguyễn Văn Linh, Hải Châu - Hotline: 0236.777.6666</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 36px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                    <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">Đăng Ký Tư Vấn & Lái Thử Miễn Phí</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 24px;">Điền thông tin của bạn vào biểu mẫu dưới đây, tư vấn viên ESFAST sẽ liên hệ sắp xếp lịch lái thử thuận tiện nhất cho bạn.</p>
+
+                    <form onsubmit="handleContactSubmit(event)">
+                        <div style="margin-bottom: 16px;">
+                            <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Họ và tên của bạn *</label>
+                            <input type="text" name="fullName" required placeholder="Nguyễn Văn A" style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Số điện thoại *</label>
+                                <input type="tel" name="phone" required placeholder="0987xxxxxx" style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Email nhận tài liệu *</label>
+                                <input type="email" name="email" required placeholder="email@example.com" style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem;">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Mẫu xe quan tâm</label>
+                                <select name="bikeModel" style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem; background: #ffffff;">
+                                    <option value="Theon S">ESFAST Theon S (Cao cấp 99 km/h)</option>
+                                    <option value="Vento S">ESFAST Vento S (Thể thao 89 km/h)</option>
+                                    <option value="Klara S2">ESFAST Klara S2 (Ý thanh lịch)</option>
+                                    <option value="Feliz S">ESFAST Feliz S (Cốp 25L)</option>
+                                    <option value="Evo 200">ESFAST Evo 200 (Quốc dân 203 km)</option>
+                                    <option value="Evo 200 Lite">ESFAST Evo 200 Lite (Học sinh)</option>
+                                    <option value="Apex X">ESFAST Apex X Hyper-E</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Showroom gần bạn</label>
+                                <select name="location" style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem; background: #ffffff;">
+                                    <option value="Hà Nội - Cầu Giấy">Hà Nội (Showroom Cầu Giấy)</option>
+                                    <option value="TP.HCM - Quận 1">TP. Hồ Chí Minh (Showroom Quận 1)</option>
+                                    <option value="Đà Nẵng - Hải Châu">Đà Nẵng (Showroom Hải Châu)</option>
+                                    <option value="Hải Phòng">Hải Phòng (Showroom Lê Hồng Phong)</option>
+                                    <option value="Cần Thơ">Cần Thơ (Showroom Ninh Kiều)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 24px;">
+                            <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Nội dung yêu cầu / Câu hỏi</label>
+                            <textarea name="message" rows="3" placeholder="Nhập câu hỏi hoặc thời gian bạn muốn lái thử..." style="width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.95rem; font-family: inherit;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; background: linear-gradient(135deg, #0052cc, #00d2ff); color: #ffffff; border: none; padding: 13px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 16px rgba(0,82,204,0.35);">
+                            <i class="fas fa-paper-plane"></i> Gửi Yêu Cầu Lái Thử
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 24px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;">
+                <p>© 2026 ESFAST E-Scooter Vietnam. All rights reserved.</p>
+                <p><a href="index.html" style="color: #00d2ff; text-decoration: none;">Trang chủ</a> | <a href="products.html" style="color: #00d2ff; text-decoration: none;">Sản phẩm</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.fullName.value;
+            const phone = form.phone.value;
+            const bike = form.bikeModel.value;
+
+            alert(`Cảm ơn quý khách ${name}! ESFAST đã tiếp nhận đăng ký lái thử dòng xe ${bike}. Bộ phận tư vấn sẽ gọi vào số ${phone} trong 30 phút để xác nhận lịch trải nghiệm.`);
+            form.reset();
+        }
+    </script>
+</body>
+</html>

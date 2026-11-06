@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng Mua Xe Máy Điện – ESFAST</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- MAIN HEADER -->
+    <header style="background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <span style="font-size: 1.45rem; font-weight: 800; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                    <span style="display: block; font-size: 0.65rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Electric Vehicle</span>
+                </div>
+            </a>
+
+            <nav class="header-nav" style="display: flex; align-items: center; gap: 22px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-home"></i> Trang Chủ</a>
+                <a href="products.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-motorcycle"></i> Xe Máy Điện</a>
+                <a href="about.html" class="nav-link" style="font-weight: 600; color: #334155;">Về ESFAST</a>
+                <a href="contact.html" class="nav-link" style="font-weight: 600; color: #334155;">Liên Hệ</a>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="cart.html" style="position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #0052cc; color: #ffffff; text-decoration: none;">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.15rem;"></i>
+                    <span class="cart-count-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center;">0</span>
+                </a>
+                <div id="headerAuthContainer"></div>
+                <button id="mobileMenuToggle" class="mobile-menu-btn" style="display: none; background: none; border: none; font-size: 1.4rem; color: #0f172a; cursor: pointer; padding: 4px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div style="background: #f1f5f9; padding: 14px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem;">
+        <div class="container" style="display: flex; align-items: center; gap: 8px; color: #64748b;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Trang chủ</a>
+            <span>/</span>
+            <span style="color: #0052cc; font-weight: 600;">Giỏ hàng mua xe</span>
+        </div>
+    </div>
+
+    <!-- MAIN CART CONTENT -->
+    <main style="padding: 48px 0 80px; background: #f8fafc;">
+        <div class="container">
+            <h1 style="font-size: 2rem; font-weight: 800; color: #0f172a; margin-bottom: 24px;">Giỏ Hàng Của Bạn</h1>
+
+            <!-- Empty State -->
+            <div id="cartEmptyState" style="display: none; background: #ffffff; border-radius: 16px; border: 1px dashed #cbd5e1; padding: 70px 20px; text-align: center;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #94a3b8; margin: 0 auto 20px;">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h3 style="font-size: 1.35rem; color: #0f172a; margin-bottom: 8px; font-weight: 700;">Giỏ hàng hiện đang trống</h3>
+                <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 24px;">Bạn chưa chọn mẫu xe máy điện thông minh nào vào giỏ.</p>
+                <a href="products.html" class="btn btn-primary" style="padding: 12px 30px; border-radius: 999px; text-decoration: none; font-weight: 700;">
+                    <i class="fas fa-motorcycle"></i> Khám Phá Các Dòng Xe Ngay
+                </a>
+            </div>
+
+            <!-- Content Layout -->
+            <div id="cartContentLayout" class="cart-layout" style="display: grid; grid-template-columns: 1fr 380px; gap: 32px; align-items: flex-start;">
+                
+                <!-- Left: Items List -->
+                <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a;">Danh Sách Xe Đã Chọn</h3>
+                        <button type="button" onclick="handleClearCart()" style="background: none; border: none; color: #ef4444; font-size: 0.85rem; font-weight: 600; cursor: pointer;">
+                            <i class="fas fa-trash-alt"></i> Xóa tất cả
+                        </button>
+                    </div>
+
+                    <div id="cartItemsContainer">
+                        <!-- Rendered by cart.js -->
+                    </div>
+
+                    <div style="margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                        <a href="products.html" style="color: #0052cc; font-weight: 600; font-size: 0.9rem; text-decoration: none;">
+                            <i class="fas fa-arrow-left"></i> Tiếp tục chọn xe khác
+                        </a>
+                        <span style="font-size: 0.82rem; color: #64748b;">
+                            <i class="fas fa-truck text-primary"></i> Miễn phí bàn giao xe tận nhà
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right: Voucher & Summary -->
+                <div>
+                    <!-- Voucher Box -->
+                    <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                        <h4 style="font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-ticket-alt text-primary"></i> Mã Ưu Đãi / Voucher
+                        </h4>
+                        <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                            <input type="text" id="voucherInput" placeholder="Nhập mã voucher..." style="flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid #cbd5e1; outline: none; font-size: 0.9rem; text-transform: uppercase;">
+                            <button type="button" onclick="applyVoucherCode()" class="btn btn-primary" style="padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer;">
+                                Áp Dụng
+                            </button>
+                        </div>
+
+                        <!-- Active Voucher Tag -->
+                        <div id="appliedVoucherTag" style="display: none; justify-content: space-between; align-items: center; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 14px;"></div>
+
+                        <!-- Suggested Vouchers -->
+                        <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 8px;">Mã gợi ý dùng nhanh:</div>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <div onclick="applyVoucherCode('ESFAST2026')" style="display: flex; justify-content: space-between; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 0.82rem;" title="Nhấn để áp dụng">
+                                <strong style="color: #0052cc;">ESFAST2026</strong>
+                                <span style="color: #10b981;">Giảm 1.000.000 ₫</span>
+                            </div>
+                            <div onclick="applyVoucherCode('VIPXANH')" style="display: flex; justify-content: space-between; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 0.82rem;" title="Nhấn để áp dụng">
+                                <strong style="color: #0052cc;">VIPXANH</strong>
+                                <span style="color: #10b981;">Giảm 5% (tối đa 2tr)</span>
+                            </div>
+                            <div onclick="applyVoucherCode('FREESHIP')" style="display: flex; justify-content: space-between; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 0.82rem;" title="Nhấn để áp dụng">
+                                <strong style="color: #0052cc;">FREESHIP</strong>
+                                <span style="color: #10b981;">Giảm 300.000 ₫</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Card -->
+                    <div style="background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 16px;">Tóm Tắt Đơn Hàng</h4>
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; font-size: 0.95rem;">
+                            <div style="display: flex; justify-content: space-between; color: #64748b;">
+                                <span>Tạm tính giỏ hàng:</span>
+                                <strong id="cartSubtotal" style="color: #0f172a;">0 ₫</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; color: #64748b;">
+                                <span>Giảm giá khuyến mãi:</span>
+                                <strong id="cartDiscount" style="color: #ef4444;">0 ₫</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; color: #64748b;">
+                                <span>Phí vận chuyển giao xe:</span>
+                                <strong style="color: #10b981;">Miễn Phí</strong>
+                            </div>
+                            <div style="border-top: 2px dashed #e2e8f0; padding-top: 14px; display: flex; justify-content: space-between; align-items: baseline;">
+                                <span style="font-size: 1.05rem; font-weight: 700; color: #0f172a;">Tổng thanh toán:</span>
+                                <strong id="cartTotal" style="font-size: 1.5rem; font-weight: 800; color: #0052cc;">0 ₫</strong>
+                            </div>
+                        </div>
+
+                        <a href="checkout.html" class="btn btn-primary" style="display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #0052cc, #00d2ff); color: #ffffff; padding: 14px; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 16px rgba(0,82,204,0.35);">
+                            Tiến Hành Đặt Xe <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                        </a>
+
+                        <div style="margin-top: 16px; text-align: center; font-size: 0.78rem; color: #94a3b8;">
+                            <i class="fas fa-lock"></i> Thanh toán mô phỏng an toàn 100%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 24px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;">
+                <p>© 2026 ESFAST E-Scooter Vietnam. All rights reserved.</p>
+                <p><a href="index.html" style="color: #00d2ff; text-decoration: none;">Trang chủ</a> | <a href="products.html" style="color: #00d2ff; text-decoration: none;">Sản phẩm</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

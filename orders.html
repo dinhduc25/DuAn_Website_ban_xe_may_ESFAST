@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đơn Mua Xe – ESFAST E-Scooter</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- MAIN HEADER -->
+    <header style="background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <span style="font-size: 1.45rem; font-weight: 800; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                    <span style="display: block; font-size: 0.65rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Electric Vehicle</span>
+                </div>
+            </a>
+
+            <nav class="header-nav" style="display: flex; align-items: center; gap: 22px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-home"></i> Trang Chủ</a>
+                <a href="products.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-motorcycle"></i> Xe Máy Điện</a>
+                <a href="about.html" class="nav-link" style="font-weight: 600; color: #334155;">Về ESFAST</a>
+                <a href="contact.html" class="nav-link" style="font-weight: 600; color: #334155;">Liên Hệ</a>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="cart.html" style="position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #f1f5f9; color: #0f172a; text-decoration: none;">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.15rem;"></i>
+                    <span class="cart-count-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center;">0</span>
+                </a>
+                <div id="headerAuthContainer"></div>
+                <button id="mobileMenuToggle" class="mobile-menu-btn" style="display: none; background: none; border: none; font-size: 1.4rem; color: #0f172a; cursor: pointer; padding: 4px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div style="background: #f1f5f9; padding: 14px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem;">
+        <div class="container" style="display: flex; align-items: center; gap: 8px; color: #64748b;">
+            <a href="index.html" style="color: #64748b; text-decoration: none;">Trang chủ</a>
+            <span>/</span>
+            <span style="color: #0052cc; font-weight: 600;">Lịch sử đơn mua xe</span>
+        </div>
+    </div>
+
+    <!-- MAIN ORDERS CONTENT -->
+    <main style="padding: 40px 0 80px; background: #f8fafc;">
+        <div class="container" style="max-width: 900px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+                <div>
+                    <h1 style="font-size: 1.95rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Đơn Hàng Của Bạn</h1>
+                    <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Theo dõi tiến độ chuẩn bị xe, vận chuyển và thông tin hợp đồng bàn giao.</p>
+                </div>
+                <a href="products.html" class="btn btn-outline" style="padding: 8px 18px; border-radius: 999px; font-size: 0.88rem; font-weight: 600; text-decoration: none;">
+                    <i class="fas fa-plus"></i> Đặt thêm xe mới
+                </a>
+            </div>
+
+            <!-- Empty Notice -->
+            <div id="ordersEmptyNotice" style="display: none; background: #ffffff; border-radius: 16px; border: 1px dashed #cbd5e1; padding: 60px 20px; text-align: center;">
+                <div style="font-size: 2.8rem; color: #94a3b8; margin-bottom: 16px;"><i class="fas fa-clipboard-list"></i></div>
+                <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 8px; font-weight: 700;">Chưa có đơn đặt xe nào</h3>
+                <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 20px;">Bạn chưa thực hiện đơn đặt mua xe máy điện nào trên hệ thống.</p>
+                <a href="products.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 999px; text-decoration: none; font-weight: 700;">
+                    Xem Các Dòng Xe Đang Mở Bán
+                </a>
+            </div>
+
+            <!-- Orders List -->
+            <div id="ordersListContainer">
+                <!-- Rendered by orders.js -->
+            </div>
+        </div>
+    </main>
+
+    <!-- ORDER DETAIL MODAL -->
+    <div id="orderDetailModal" style="display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.7); z-index: 10000; align-items: center; justify-content: center; padding: 20px;">
+        <div id="orderDetailModalContent" style="background: #ffffff; border-radius: 18px; width: 100%; max-width: 600px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); overflow: hidden;"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 24px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;">
+                <p>© 2026 ESFAST E-Scooter Vietnam. All rights reserved.</p>
+                <p><a href="index.html" style="color: #00d2ff; text-decoration: none;">Trang chủ</a> | <a href="contact.html" style="color: #00d2ff; text-decoration: none;">Hỗ trợ khách hàng</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/orders.js"></script>
+</body>
+</html>

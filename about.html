@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về ESFAST – Tiên Phong Kỷ Nguyên Xe Điện Thông Minh</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- MAIN HEADER -->
+    <header style="background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <span style="font-size: 1.45rem; font-weight: 800; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                    <span style="display: block; font-size: 0.65rem; color: #64748b; font-weight: 600; text-transform: uppercase;">Electric Vehicle</span>
+                </div>
+            </a>
+
+            <nav class="header-nav" style="display: flex; align-items: center; gap: 22px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-home"></i> Trang Chủ</a>
+                <a href="products.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-motorcycle"></i> Xe Máy Điện</a>
+                <a href="about.html" class="nav-link active" style="font-weight: 600; color: #0052cc;">Về ESFAST</a>
+                <a href="contact.html" class="nav-link" style="font-weight: 600; color: #334155;">Liên Hệ</a>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="cart.html" style="position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #f1f5f9; color: #0f172a; text-decoration: none;">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.15rem;"></i>
+                    <span class="cart-count-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center;">0</span>
+                </a>
+                <div id="headerAuthContainer"></div>
+                <button id="mobileMenuToggle" class="mobile-menu-btn" style="display: none; background: none; border: none; font-size: 1.4rem; color: #0f172a; cursor: pointer; padding: 4px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO ABOUT -->
+    <section style="background: #0f172a; color: #ffffff; padding: 80px 0; position: relative; overflow: hidden;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+                <span style="background: rgba(0,210,255,0.15); color: #00d2ff; padding: 6px 16px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">SỨ MỆNH XANH TƯƠNG LAI</span>
+                <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.25; margin: 18px 0 16px;">Kiến Tạo Phương Tiện Xe Điện Thông Minh Cho Hàng Triệu Người Việt</h1>
+                <p style="font-size: 1.05rem; color: #94a3b8; line-height: 1.7;">ESFAST tự hào là biểu tượng đổi mới sáng tạo, phát triển các dòng xe máy điện vận hành bền bỉ, tiết kiệm chi phí vượt trội và thân thiện tuyệt đối với môi trường tự nhiên.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND STORY -->
+    <section style="padding: 70px 0; background: #ffffff;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+                <div>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: #0052cc; letter-spacing: 1.5px; text-transform: uppercase;">CÂU CHUYỆN THƯƠNG HIỆU</span>
+                    <h2 style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 8px 0 16px; line-height: 1.3;">Chuyển Đổi Năng Lượng Xanh Bắt Đầu Từ Mỗi Chuyến Đi</h2>
+                    <p style="color: #64748b; line-height: 1.7; margin-bottom: 16px;">Tại Việt Nam, hàng chục triệu chiếc xe máy xăng đang lưu thông mỗi ngày là một trong những nguyên nhân chính gây ô nhiễm khói bụi tại các đô thị lớn. ESFAST ra đời với mục tiêu mang đến những chiếc xe máy điện có khả năng vận hành mạnh mẽ tương đương xe xăng, nhưng không phát thải, không tiếng ồn.</p>
+                    <p style="color: #64748b; line-height: 1.7; margin-bottom: 24px;">Với sự đầu tư mạnh mẽ vào công nghệ pin LFP (Lithium Iron Phosphate) và hệ thống khung gầm hợp kim tiêu chuẩn quốc tế, các dòng xe ESFAST đã chứng minh độ bền bỉ sau hàng triệu km lăn bánh khắp mọi nẻo đường đất nước.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="border-left: 3px solid #0052cc; padding-left: 14px;">
+                            <div style="font-size: 1.8rem; font-weight: 800; color: #0052cc;">200.000+</div>
+                            <div style="font-size: 0.85rem; color: #64748b;">Khách hàng tin chọn lăn bánh</div>
+                        </div>
+                        <div style="border-left: 3px solid #00d2ff; padding-left: 14px;">
+                            <div style="font-size: 1.8rem; font-weight: 800; color: #0f172a;">150+</div>
+                            <div style="font-size: 0.85rem; color: #64748b;">Showroom & Trạm sạc toàn quốc</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/about_hero.jpg" alt="Về ESFAST" style="border-radius: 16px; width: 100%; height: 380px; object-fit: cover; box-shadow: 0 16px 36px rgba(0,0,0,0.12);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 CORE PILLARS -->
+    <section style="padding: 60px 0; background: #f8fafc;">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+                <span style="font-size: 0.82rem; font-weight: 700; color: #0052cc; letter-spacing: 1.5px; text-transform: uppercase;">GIÁ TRỊ CỐT LÕI</span>
+                <h2 style="font-size: 2.1rem; color: #0f172a; margin-top: 6px; font-weight: 800;">3 Trụ Cột Công Nghệ Của ESFAST</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                <div style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #eff6ff; color: #0052cc; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">Pin LFP An Toàn Tuyệt Đối</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin: 0;">Khả năng ổn định nhiệt độ cao, không xảy ra hiện tượng cháy nổ ngay cả khi va đập mạnh hoặc bị đâm thủng, tuổi thọ lên tới hơn 2000 chu kỳ sạc-xả.</p>
+                </div>
+
+                <div style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #ecfdf5; color: #10b981; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">Chống Nước Tiêu Chuẩn IP67</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin: 0;">Khối động cơ và pin được niêm phong kín hoàn toàn, cho phép xe lội nước an toàn dưới mực nước sâu 0.5m liên tục trong 30 phút mà không gặp bất kỳ sự cố nào.</p>
+                </div>
+
+                <div style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; padding: 32px 24px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #faf5ff; color: #9333ea; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">Hệ Điều Hành ESFAST OS</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin: 0;">Kết nối liền mạch với smartphone thông qua Bluetooth/4G. Định vị xe theo thời gian thực, mở khóa không cần chìa PAAK và cập nhật phần mềm xe qua OTA tự động.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 24px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;">
+                <p>© 2026 ESFAST E-Scooter Vietnam. All rights reserved.</p>
+                <p><a href="index.html" style="color: #00d2ff; text-decoration: none;">Trang chủ</a> | <a href="contact.html" style="color: #00d2ff; text-decoration: none;">Liên hệ</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

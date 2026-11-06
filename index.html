@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESFAST – Hệ Thống Xe Máy Điện Thông Minh Tiên Phong Việt Nam</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- TOP HEADER BAR -->
+    <div style="background: #0b1329; color: #94a3b8; font-size: 0.82rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <span><i class="fas fa-headset text-primary" style="margin-right: 6px;"></i> Hotline: <strong>1900 6868</strong> (Miễn phí 24/7)</span>
+                <span class="d-none-sm"><i class="fas fa-map-marker-alt text-primary" style="margin-right: 6px;"></i> Hệ thống 150+ showroom toàn quốc</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <span style="color: #00d2ff;"><i class="fas fa-shield-alt"></i> Bảo hành chính hãng 5 năm</span>
+                <span style="color: #38bdf8;">|</span>
+                <span style="color: #cbd5e1;"><i class="fas fa-truck-moving"></i> Giao xe tận nhà miễn phí</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header style="background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 999;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 20px;">
+            <!-- Brand Logo -->
+            <a href="index.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.3rem; box-shadow: 0 4px 10px rgba(0,82,204,0.3);">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <span style="font-size: 1.45rem; font-weight: 800; letter-spacing: 0.5px; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                    <span style="display: block; font-size: 0.65rem; color: #64748b; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;">Electric Vehicle</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="header-nav" style="display: flex; align-items: center; gap: 22px;">
+                <a href="index.html" class="nav-link" style="font-weight: 600; color: #0052cc;"><i class="fas fa-home"></i> Trang Chủ</a>
+                <a href="products.html" class="nav-link" style="font-weight: 600; color: #334155;"><i class="fas fa-motorcycle"></i> Xe Máy Điện</a>
+                <a href="products.html?category=1" class="nav-link" style="font-weight: 600; color: #334155;">Dòng Cao Cấp</a>
+                <a href="products.html?promo=1" class="nav-link" style="font-weight: 600; color: #ef4444;"><i class="fas fa-tags"></i> Khuyến Mãi Hot</a>
+                <a href="about.html" class="nav-link" style="font-weight: 600; color: #334155;">Về ESFAST</a>
+                <a href="contact.html" class="nav-link" style="font-weight: 600; color: #334155;">Liên Hệ</a>
+            </nav>
+
+            <!-- Search Box -->
+            <div class="header-search-wrap" style="flex: 0 1 260px;">
+                <form class="header-search-form" style="position: relative;">
+                    <input type="text" name="search" placeholder="Tìm dòng xe, Theon, Evo..." style="width: 100%; padding: 9px 40px 9px 16px; border-radius: 999px; border: 1px solid #cbd5e1; outline: none; font-size: 0.88rem; transition: var(--transition);">
+                    <button type="submit" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #0052cc; cursor: pointer;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Cart & Auth Actions -->
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <!-- Cart Icon -->
+                <a href="cart.html" style="position: relative; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: #f1f5f9; color: #0f172a; text-decoration: none;">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.15rem;"></i>
+                    <span class="cart-count-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: none; align-items: center; justify-content: center;">0</span>
+                </a>
+
+                <!-- User Auth Area -->
+                <div id="headerAuthContainer"></div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileMenuToggle" class="mobile-menu-btn" style="display: none; background: none; border: none; font-size: 1.4rem; color: #0f172a; cursor: pointer; padding: 4px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="drawerBackdrop" style="position: fixed; inset: 0; background: rgba(15,23,42,0.6); z-index: 10000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;"></div>
+    <div id="mobileDrawer" style="position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: #ffffff; z-index: 10001; transition: left 0.3s ease; padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto;">
+        <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
+                <span style="font-size: 1.3rem; font-weight: 800; color: #0f172a;">ES<span style="color: #0052cc;">FAST</span></span>
+                <button id="closeDrawerBtn" style="background: none; border: none; font-size: 1.3rem; color: #64748b; cursor: pointer;">&times;</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+                <a href="index.html" class="drawer-nav-link" style="font-weight: 600; color: #0052cc; padding: 8px 0;"><i class="fas fa-home" style="width: 24px;"></i> Trang Chủ</a>
+                <a href="products.html" class="drawer-nav-link" style="font-weight: 600; color: #334155; padding: 8px 0;"><i class="fas fa-motorcycle" style="width: 24px;"></i> Tất Cả Xe Máy Điện</a>
+                <a href="products.html?category=1" class="drawer-nav-link" style="font-weight: 600; color: #334155; padding: 8px 0;"><i class="fas fa-crown" style="width: 24px;"></i> Xe Cao Cấp</a>
+                <a href="products.html?category=3" class="drawer-nav-link" style="font-weight: 600; color: #334155; padding: 8px 0;"><i class="fas fa-graduation-cap" style="width: 24px;"></i> Xe Học Sinh - Sinh Viên</a>
+                <a href="orders.html" class="drawer-nav-link" style="font-weight: 600; color: #334155; padding: 8px 0;"><i class="fas fa-clipboard-list" style="width: 24px;"></i> Tra Cứu Đơn Hàng</a>
+                <a href="about.html" class="drawer-nav-link" style="font-weight: 600; color: #334155; padding: 8px 0;"><i class="fas fa-info-circle" style="width: 24px;"></i> Giới Thiệu ESFAST</a>
+                <a href="contact.html" class="drawer-nav-link" style="font-weight: 600; color: #334155; padding: 8px 0;"><i class="fas fa-envelope" style="width: 24px;"></i> Liên Hệ & Lái Thử</a>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <p style="font-size: 0.82rem; color: #64748b; margin-bottom: 8px;"><i class="fas fa-phone-alt"></i> Tổng đài: 1900 6868</p>
+            <p style="font-size: 0.82rem; color: #64748b;"><i class="fas fa-map-marker-alt"></i> Hà Nội - Đà Nẵng - TP.HCM</p>
+        </div>
+    </div>
+
+    <!-- HERO SLIDER SECTION -->
+    <section class="hero-slider" id="heroSlider" style="position: relative; background: #0b1329; color: #ffffff; overflow: hidden; min-height: 520px; display: flex; align-items: center;">
+        <div class="glow-orb orb-1" style="position: absolute; width: 450px; height: 450px; background: radial-gradient(circle, rgba(0,82,204,0.4), transparent 70%); top: -100px; left: -100px; pointer-events: none;"></div>
+        <div class="glow-orb orb-2" style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,210,255,0.25), transparent 70%); bottom: -120px; right: -100px; pointer-events: none;"></div>
+
+        <div class="container" style="position: relative; z-index: 2; width: 100%;">
+            <div id="heroSlidesContainer">
+                <!-- Slides will be injected dynamically from LocalStorage Banners -->
+            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div id="heroDotsContainer" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;"></div>
+    </section>
+
+    <!-- KEY TECH HIGHLIGHTS BAR -->
+    <section style="background: #0f172a; color: #ffffff; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(0,82,204,0.15); border: 1px solid rgba(0,82,204,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #00d2ff; flex-shrink: 0;">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Công Nghệ Pin LFP</h4>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Chống cháy nổ tuyệt đối, tuổi thọ trên 2000 chu kỳ sạc</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #10b981; flex-shrink: 0;">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Chuẩn Chống Nước IP67</h4>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Động cơ & pin vận hành bền bỉ dưới mực nước sâu 0.5m</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #f59e0b; flex-shrink: 0;">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Tiết Kiệm 80% Chi Phí</h4>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Chỉ ~5.000đ cho mỗi 100km, không tốn tiền bảo dưỡng dầu nhớt</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(147,51,234,0.15); border: 1px solid rgba(147,51,234,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #c084fc; flex-shrink: 0;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Kết Nối Thông Minh App</h4>
+                        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">Định vị GPS, khóa xe từ xa, cảnh báo chống trộm chuẩn xác</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section style="padding: 60px 0; background: #f8fafc;">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+                <span style="font-size: 0.82rem; font-weight: 700; color: #0052cc; letter-spacing: 1.5px; text-transform: uppercase;">DANH MỤC SẢN PHẨM</span>
+                <h2 style="font-size: 2.1rem; color: #0f172a; margin-top: 6px; font-weight: 800;">Lựa Chọn Dòng Xe Máy Điện Phù Hợp</h2>
+                <p style="color: #64748b; font-size: 0.95rem; margin-top: 8px;">Từ các dòng xe máy điện cao cấp thể thao cho đến các mẫu xe nhẹ nhàng cho học sinh sinh viên.</p>
+            </div>
+
+            <div id="categoryGridContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section style="padding: 60px 0; background: #ffffff;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 16px;">
+                <div>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: #0052cc; letter-spacing: 1.5px; text-transform: uppercase;">ĐỈNH CAO CÔNG NGHỆ</span>
+                    <h2 style="font-size: 2.1rem; color: #0f172a; margin-top: 6px; font-weight: 800;">Dòng Xe Nổi Bật Nhất</h2>
+                </div>
+                <a href="products.html" class="btn btn-outline" style="border-radius: 999px; padding: 10px 24px; font-weight: 600;">
+                    Xem tất cả xe <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                </a>
+            </div>
+
+            <div id="featuredProductsContainer" class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
+                <!-- Products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOTIONAL VOUCHER BANNER -->
+    <section style="padding: 40px 0; background: linear-gradient(135deg, #0052cc, #002e80); color: #ffffff;">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+                <div style="max-width: 650px;">
+                    <span style="background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">MỪNG XUÂN XANH 2026</span>
+                    <h3 style="font-size: 1.85rem; font-weight: 800; margin: 12px 0 8px;">Nhập Mã "ESFAST2026" – Giảm Ngay 1.000.000 ₫</h3>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0;">Áp dụng cho tất cả khách hàng đặt mua xe máy điện thông minh trực tiếp trên website. Hỗ trợ giao xe tận nhà và tặng 1 năm gói cứu hộ 24/7.</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <a href="products.html" class="btn btn-accent" style="background: #00d2ff; color: #0f172a; font-weight: 700; padding: 14px 28px; border-radius: 999px; text-decoration: none;">
+                        <i class="fas fa-shopping-bag"></i> Mua Ngay Hôm Nay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST SELLERS & NEW ARRIVALS TABS -->
+    <section style="padding: 60px 0; background: #f8fafc;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="font-size: 2.1rem; color: #0f172a; font-weight: 800;">Dòng Xe Được Yêu Thích</h2>
+                <div style="display: inline-flex; background: #e2e8f0; border-radius: 999px; padding: 4px; margin-top: 16px;">
+                    <button id="tabBestsellerBtn" style="padding: 8px 24px; border-radius: 999px; border: none; background: #0052cc; color: #ffffff; font-weight: 700; cursor: pointer; transition: var(--transition);">
+                        Xe Bán Chạy Nhất
+                    </button>
+                    <button id="tabNewBtn" style="padding: 8px 24px; border-radius: 999px; border: none; background: transparent; color: #64748b; font-weight: 700; cursor: pointer; transition: var(--transition);">
+                        Xe Mới Ra Mắt
+                    </button>
+                </div>
+            </div>
+
+            <div id="tabProductsContainer" class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
+                <!-- Tab products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON / WHY CHOOSE ESFAST -->
+    <section style="padding: 70px 0; background: #ffffff;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center;">
+                <div>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: #0052cc; letter-spacing: 1.5px; text-transform: uppercase;">SO SÁNH THỰC TẾ</span>
+                    <h2 style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin: 8px 0 16px; line-height: 1.25;">Tại Sao Hàng Triệu Khách Hàng Chọn ESFAST?</h2>
+                    <p style="color: #64748b; line-height: 1.7; margin-bottom: 24px;">Xe máy điện thông minh ESFAST không chỉ là phương tiện di chuyển hàng ngày, mà còn là cam kết bảo vệ môi trường, giảm phát thải khí nhà kính và cắt giảm tối đa chi phí vận hành cho bạn và gia đình.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div style="display: flex; gap: 14px; align-items: flex-start;">
+                            <div style="color: #10b981; font-size: 1.2rem; margin-top: 2px;"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 2px;">Tiết kiệm hơn 7.000.000 ₫ chi phí nhiên liệu mỗi năm</h4>
+                                <p style="font-size: 0.88rem; color: #64748b; margin: 0;">Sạc điện tại nhà tiện lợi qua đêm với chi phí rẻ hơn 5 lần so với đổ xăng.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 14px; align-items: flex-start;">
+                            <div style="color: #10b981; font-size: 1.2rem; margin-top: 2px;"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 2px;">Không khói bụi, không tiếng ồn động cơ</h4>
+                                <p style="font-size: 0.88rem; color: #64748b; margin: 0;">Vận hành êm ái, bảo vệ sức khỏe hệ hô hấp của người lái và cộng đồng.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 14px; align-items: flex-start;">
+                            <div style="color: #10b981; font-size: 1.2rem; margin-top: 2px;"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 2px;">Hệ thống trạm sạc & cứu hộ phủ khắp 63 tỉnh thành</h4>
+                                <p style="font-size: 0.88rem; color: #64748b; margin: 0;">An tâm trên mọi hành trình dài từ thành thị đến ngoại ô.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; border-radius: 16px; padding: 32px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 20px; text-align: center;">Bảng So Sánh Chi Phí 1 Năm (50 km/ngày)</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #cbd5e1; text-align: left;">
+                                <th style="padding: 10px 8px; color: #64748b;">Hạng mục</th>
+                                <th style="padding: 10px 8px; color: #ef4444;">Xe Máy Xăng</th>
+                                <th style="padding: 10px 8px; color: #0052cc; font-weight: 700;">Xe Máy Điện ESFAST</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 12px 8px; font-weight: 600;">Nhiên liệu / Điện</td>
+                                <td style="padding: 12px 8px; color: #64748b;">~9.125.000 ₫</td>
+                                <td style="padding: 12px 8px; color: #10b981; font-weight: 700;">~1.825.000 ₫</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 12px 8px; font-weight: 600;">Thay dầu & lọc gió</td>
+                                <td style="padding: 12px 8px; color: #64748b;">~1.200.000 ₫</td>
+                                <td style="padding: 12px 8px; color: #10b981; font-weight: 700;">0 ₫ (Không dùng dầu)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 12px 8px; font-weight: 600;">Bảo trì động cơ</td>
+                                <td style="padding: 12px 8px; color: #64748b;">~1.500.000 ₫</td>
+                                <td style="padding: 12px 8px; color: #10b981; font-weight: 700;">~300.000 ₫</td>
+                            </tr>
+                            <tr style="background: rgba(0,82,204,0.06); font-weight: 800;">
+                                <td style="padding: 14px 8px; color: #0f172a;">TỔNG CHI PHÍ/NĂM</td>
+                                <td style="padding: 14px 8px; color: #ef4444;">11.825.000 ₫</td>
+                                <td style="padding: 14px 8px; color: #0052cc; font-size: 1.05rem;">2.125.000 ₫</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <span style="display: inline-block; background: #ecfdf5; color: #059669; font-weight: 700; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem;">
+                            <i class="fas fa-arrow-down"></i> Tiết kiệm 9.700.000 ₫ mỗi năm!
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST NEWS & GUIDES -->
+    <section style="padding: 60px 0; background: #f8fafc;">
+        <div class="container">
+            <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+                <span style="font-size: 0.82rem; font-weight: 700; color: #0052cc; letter-spacing: 1.5px; text-transform: uppercase;">CẨM NANG XE ĐIỆN</span>
+                <h2 style="font-size: 2.1rem; color: #0f172a; margin-top: 6px; font-weight: 800;">Tin Tức & Kinh Nghiệm Mới Nhất</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <article style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: var(--transition);">
+                    <img src="images/post_compare_cost.jpg" alt="So sánh chi phí nuôi xe điện" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span style="font-size: 0.75rem; color: #0052cc; font-weight: 700; text-transform: uppercase;">Kinh nghiệm xe điện</span>
+                        <h4 style="font-size: 1.1rem; color: #0f172a; margin: 8px 0 10px; line-height: 1.4;">So sánh chi phí nuôi xe máy điện ESFAST và xe máy xăng sau 1 năm</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin-bottom: 16px;">Chi phí sử dụng xe máy điện ESFAST chỉ bằng 1/5 xe xăng cùng phân khúc, giúp người dùng tiết kiệm hàng chục triệu đồng mỗi năm...</p>
+                        <a href="about.html" style="color: #0052cc; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Đọc bài viết <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+                    </div>
+                </article>
+
+                <article style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: var(--transition);">
+                    <img src="images/post_lfp_battery.jpg" alt="Công nghệ Pin LFP" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span style="font-size: 0.75rem; color: #0052cc; font-weight: 700; text-transform: uppercase;">Công nghệ</span>
+                        <h4 style="font-size: 1.1rem; color: #0f172a; margin: 8px 0 10px; line-height: 1.4;">Công nghệ Pin LFP trên xe điện ESFAST: Chống cháy nổ an toàn tuyệt đối</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin-bottom: 16px;">Tìm hiểu công nghệ pin Lithium Iron Phosphate (LFP) an toàn hàng đầu thế giới được trang bị đồng loạt trên tất cả xe ESFAST...</p>
+                        <a href="about.html" style="color: #0052cc; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Đọc bài viết <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+                    </div>
+                </article>
+
+                <article style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 14px rgba(0,0,0,0.04); transition: var(--transition);">
+                    <img src="images/post_maintenance.jpg" alt="Bảo dưỡng xe máy điện" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 20px;">
+                        <span style="font-size: 0.75rem; color: #0052cc; font-weight: 700; text-transform: uppercase;">Cẩm nang sử dụng</span>
+                        <h4 style="font-size: 1.1rem; color: #0f172a; margin: 8px 0 10px; line-height: 1.4;">Hướng dẫn kiểm tra và bảo dưỡng xe máy điện ESFAST định kỳ đúng cách</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin-bottom: 16px;">Những bí quyết vàng giúp kéo dài tuổi thọ động cơ và hệ thống phanh, điện tử trên xe máy điện thông minh...</p>
+                        <a href="about.html" style="color: #0052cc; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Đọc bài viết <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 24px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 36px; margin-bottom: 48px;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                        <div style="width: 38px; height: 38px; background: linear-gradient(135deg, #0052cc, #00d2ff); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.2rem;">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <span style="font-size: 1.4rem; font-weight: 800; color: #ffffff;">ES<span style="color: #00d2ff;">FAST</span></span>
+                    </div>
+                    <p style="color: #94a3b8; line-height: 1.6; margin-bottom: 20px;">ESFAST là thương hiệu xe máy điện thông minh hàng đầu tại Việt Nam, mang đến giải pháp giao thông xanh, bền vững với công nghệ pin LFP và động cơ điện siêu êm ái.</p>
+                    <div style="display: flex; gap: 12px;">
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #00d2ff; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #00d2ff; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: #00d2ff; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: #ffffff; font-size: 1.05rem; margin-bottom: 18px; font-weight: 700;">Dòng Xe Điện</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="product-detail.html?id=1" style="color: #94a3b8;">ESFAST Theon S</a></li>
+                        <li><a href="product-detail.html?id=2" style="color: #94a3b8;">ESFAST Vento S</a></li>
+                        <li><a href="product-detail.html?id=3" style="color: #94a3b8;">ESFAST Klara S2</a></li>
+                        <li><a href="product-detail.html?id=4" style="color: #94a3b8;">ESFAST Feliz S</a></li>
+                        <li><a href="product-detail.html?id=5" style="color: #94a3b8;">ESFAST Evo 200</a></li>
+                        <li><a href="product-detail.html?id=6" style="color: #94a3b8;">ESFAST Evo Lite</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #ffffff; font-size: 1.05rem; margin-bottom: 18px; font-weight: 700;">Hỗ Trợ Khách Hàng</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="orders.html" style="color: #94a3b8;">Tra cứu đơn hàng</a></li>
+                        <li><a href="about.html" style="color: #94a3b8;">Chính sách bảo hành 5 năm</a></li>
+                        <li><a href="contact.html" style="color: #94a3b8;">Tìm trạm sạc gần nhất</a></li>
+                        <li><a href="contact.html" style="color: #94a3b8;">Đăng ký lái thử miễn phí</a></li>
+                        <li><a href="login.html" style="color: #94a3b8;">Tài khoản thành viên</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #ffffff; font-size: 1.05rem; margin-bottom: 18px; font-weight: 700;">Thông Tin Liên Hệ</h4>
+                    <p style="color: #94a3b8; margin-bottom: 8px;"><i class="fas fa-building text-primary" style="margin-right: 8px;"></i> Tòa nhà ESFAST Tower, Cầu Giấy, Hà Nội</p>
+                    <p style="color: #94a3b8; margin-bottom: 8px;"><i class="fas fa-phone-alt text-primary" style="margin-right: 8px;"></i> Hotline: 1900 6868</p>
+                    <p style="color: #94a3b8; margin-bottom: 14px;"><i class="fas fa-envelope text-primary" style="margin-right: 8px;"></i> Email: cskh@esfast.vn</p>
+                    <div style="background: rgba(0,82,204,0.15); border: 1px solid rgba(0,82,204,0.3); border-radius: 8px; padding: 10px 14px; font-size: 0.8rem; color: #38bdf8;">
+                        <i class="fas fa-shield-alt"></i> Website demo mô phỏng thuần HTML, CSS, JavaScript.
+                    </div>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: #64748b;">
+                <p>© 2026 ESFAST E-Scooter Vietnam. All rights reserved.</p>
+                <p>Thiết kế hiện đại chuẩn phong cách xe máy điện thông minh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Home page logic
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Render Hero Slider
+            const banners = getBanners().filter(b => b.isActive);
+            const slidesContainer = document.getElementById('heroSlidesContainer');
+            const dotsContainer = document.getElementById('heroDotsContainer');
+
+            if (slidesContainer && banners.length > 0) {
+                slidesContainer.innerHTML = banners.map((b, i) => `
+                    <div class="hero-slide ${i === 0 ? 'active' : ''}" style="display: ${i === 0 ? 'block' : 'none'};" data-index="${i}">
+                        <div class="hero-slide-inner" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 60px 0;">
+                            <div class="hero-info" style="max-width: 580px;">
+                                <span style="background: rgba(0,210,255,0.15); border: 1px solid rgba(0,210,255,0.3); color: #00d2ff; padding: 6px 16px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">
+                                    ${b.badge || 'CÔNG NGHỆ TƯƠNG LAI'}
+                                </span>
+                                <h1 class="hero-title" style="font-size: 2.85rem; font-weight: 800; line-height: 1.2; margin: 16px 0 12px; color: #ffffff;">
+                                    ${b.title}
+                                </h1>
+                                <p style="font-size: 1.05rem; color: #94a3b8; line-height: 1.6; margin-bottom: 28px;">
+                                    ${b.subtitle}
+                                </p>
+                                <div class="hero-actions" style="display: flex; gap: 14px; flex-wrap: wrap;">
+                                    <a href="${b.link || 'products.html'}" class="btn btn-primary" style="background: #0052cc; color: #ffffff; padding: 12px 28px; border-radius: 999px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(0,82,204,0.4);">
+                                        Khám Phá Chi Tiết <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                                    </a>
+                                    <a href="contact.html" class="btn btn-outline" style="border: 1px solid rgba(255,255,255,0.3); color: #ffffff; padding: 12px 24px; border-radius: 999px; font-weight: 600; text-decoration: none;">
+                                        Đăng Ký Lái Thử
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="hero-img-wrap" style="flex: 1; max-width: 520px; text-align: center;">
+                                <img src="${b.image}" alt="${b.title}" style="max-width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); border-radius: 12px;">
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                dotsContainer.innerHTML = banners.map((_, i) => `
+                    <button class="hero-dot ${i === 0 ? 'active' : ''}" onclick="switchSlide(${i})" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: ${i === 0 ? '#00d2ff' : 'rgba(255,255,255,0.3)'}; cursor: pointer; transition: all 0.3s;"></button>
+                `).join('');
+
+                let currentSlide = 0;
+                window.switchSlide = function(index) {
+                    const slides = document.querySelectorAll('.hero-slide');
+                    const dots = document.querySelectorAll('.hero-dot');
+                    slides.forEach((s, idx) => {
+                        s.style.display = idx === index ? 'block' : 'none';
+                    });
+                    dots.forEach((d, idx) => {
+                        d.style.background = idx === index ? '#00d2ff' : 'rgba(255,255,255,0.3)';
+                    });
+                    currentSlide = index;
+                };
+
+                setInterval(() => {
+                    let next = (currentSlide + 1) % banners.length;
+                    window.switchSlide(next);
+                }, 5000);
+            }
+
+            // 2. Render Categories
+            const categories = getCategories().filter(c => c.isActive);
+            const catContainer = document.getElementById('categoryGridContainer');
+            if (catContainer) {
+                catContainer.innerHTML = categories.map(cat => `
+                    <a href="products.html?category=${cat.id}" style="background: #ffffff; border-radius: 14px; padding: 24px; border: 1px solid #e2e8f0; text-decoration: none; display: flex; flex-direction: column; align-items: flex-start; transition: var(--transition); box-shadow: 0 2px 8px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.03)';">
+                        <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(0,82,204,0.08); display: flex; align-items: center; justify-content: center; color: #0052cc; font-size: 1.3rem; margin-bottom: 16px;">
+                            <i class="fas ${cat.icon || 'fa-motorcycle'}"></i>
+                        </div>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">${cat.name}</h3>
+                        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px; line-height: 1.5; flex: 1;">${cat.description}</p>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #0052cc; display: flex; align-items: center; gap: 6px;">
+                            Xem danh sách <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                        </span>
+                    </a>
+                `).join('');
+            }
+
+            // 3. Render Product Card Helper
+            function renderProductCard(p) {
+                const discountPercent = p.salePrice && p.price > p.salePrice ? Math.round(((p.price - p.salePrice) / p.price) * 100) : 0;
+                return `
+                    <div class="product-card" style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 14px 28px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.03)';">
+                        ${discountPercent > 0 ? `
+                            <span style="position: absolute; top: 12px; left: 12px; background: #ef4444; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; z-index: 2;">
+                                -${discountPercent}%
+                            </span>
+                        ` : ''}
+                        ${p.stockQuantity <= 0 ? `
+                            <span style="position: absolute; top: 12px; right: 12px; background: #64748b; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; z-index: 2;">
+                                Tạm hết hàng
+                            </span>
+                        ` : ''}
+
+                        <a href="product-detail.html?id=${p.id}" style="padding: 24px 20px 10px; display: block; text-align: center; background: #f8fafc;">
+                            <img src="${p.image}" alt="${p.name}" style="height: 180px; width: 100%; object-fit: contain; margin: 0 auto; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>
+
+                        <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
+                            <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 4px;">SKU: ${p.sku}</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 10px;">
+                                <a href="product-detail.html?id=${p.id}" style="color: #0f172a; text-decoration: none;">${p.name}</a>
+                            </h3>
+
+                            <!-- Specs Preview -->
+                            <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
+                                <span style="font-size: 0.78rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; color: #475569;">
+                                    <i class="fas fa-tachometer-alt text-primary"></i> ${p.specs.maxSpeed} km/h
+                                </span>
+                                <span style="font-size: 0.78rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; color: #475569;">
+                                    <i class="fas fa-route text-primary"></i> ${p.specs.maxDistance} km/sạc
+                                </span>
+                                <span style="font-size: 0.78rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; color: #475569;">
+                                    <i class="fas fa-bolt text-primary"></i> ${p.specs.motorPower}
+                                </span>
+                            </div>
+
+                            <!-- Price -->
+                            <div style="margin-top: auto; margin-bottom: 16px;">
+                                <div style="font-size: 1.25rem; font-weight: 800; color: #0052cc;">
+                                    ${formatMoney(p.salePrice || p.price)}
+                                </div>
+                                ${p.salePrice && p.price > p.salePrice ? `
+                                    <div style="font-size: 0.85rem; color: #94a3b8; text-decoration: line-through;">
+                                        ${formatMoney(p.price)}
+                                    </div>
+                                ` : ''}
+                            </div>
+
+                            <!-- Actions -->
+                            <div style="display: grid; grid-template-columns: 1fr auto; gap: 8px;">
+                                <a href="product-detail.html?id=${p.id}" class="btn btn-outline" style="text-align: center; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; font-weight: 600; text-decoration: none;">
+                                    Xem Chi Tiết
+                                </a>
+                                <button onclick="quickAddToCart(${p.id})" style="background: rgba(0,82,204,0.1); border: 1px solid rgba(0,82,204,0.2); color: #0052cc; border-radius: 8px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;" title="Thêm vào giỏ">
+                                    <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 4. Render Featured Products
+            const products = getProducts().filter(p => p.isActive);
+            const featuredContainer = document.getElementById('featuredProductsContainer');
+            if (featuredContainer) {
+                const featured = products.filter(p => p.isFeatured).slice(0, 4);
+                featuredContainer.innerHTML = featured.map(p => renderProductCard(p)).join('');
+            }
+
+            // 5. Render Tabs (Bestsellers vs New)
+            const tabContainer = document.getElementById('tabProductsContainer');
+            const tabBestsellerBtn = document.getElementById('tabBestsellerBtn');
+            const tabNewBtn = document.getElementById('tabNewBtn');
+
+            function renderTab(type) {
+                if (!tabContainer) return;
+                let list = [];
+                if (type === 'bestseller') {
+                    list = products.filter(p => p.isBestseller).slice(0, 4);
+                    if (list.length === 0) list = products.slice(0, 4);
+                } else {
+                    list = products.filter(p => p.isNew).slice(0, 4);
+                    if (list.length === 0) list = products.slice(2, 6);
+                }
+                tabContainer.innerHTML = list.map(p => renderProductCard(p)).join('');
+            }
+
+            if (tabBestsellerBtn && tabNewBtn) {
+                tabBestsellerBtn.addEventListener('click', () => {
+                    tabBestsellerBtn.style.background = '#0052cc';
+                    tabBestsellerBtn.style.color = '#ffffff';
+                    tabNewBtn.style.background = 'transparent';
+                    tabNewBtn.style.color = '#64748b';
+                    renderTab('bestseller');
+                });
+
+                tabNewBtn.addEventListener('click', () => {
+                    tabNewBtn.style.background = '#0052cc';
+                    tabNewBtn.style.color = '#ffffff';
+                    tabBestsellerBtn.style.background = 'transparent';
+                    tabBestsellerBtn.style.color = '#64748b';
+                    renderTab('new');
+                });
+
+                renderTab('bestseller');
+            }
+
+            // Quick add to cart
+            window.quickAddToCart = function(id) {
+                const res = addToCart(id, null, 1);
+                if (res.success) {
+                    showToast(res.message, 'success');
+                } else {
+                    showToast(res.message, 'danger');
+                }
+            };
+        });
+    </script>
+</body>
+</html>
