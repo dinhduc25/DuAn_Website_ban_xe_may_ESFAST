@@ -66,6 +66,18 @@ const DEFAULT_USERS = [
         role: 'customer',
         status: 'locked',
         createdAt: '2026-04-05'
+    },
+    {
+        id: 5,
+        username: 'shopmanager',
+        email: 'shop@esfast.vn',
+        password: 'shop123',
+        fullName: 'Nguyễn Thị Quản Lý',
+        phone: '0909888777',
+        address: 'Showroom ESFAST, Hà Nội',
+        role: 'shop_manager',
+        status: 'active',
+        createdAt: '2026-02-01'
     }
 ];
 

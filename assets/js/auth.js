@@ -29,6 +29,21 @@ function requireAdminAuth(redirectUrl = '../login.html') {
     return user;
 }
 
+function requireManagerAuth(redirectUrl = '../login.html') {
+    const user = getCurrentUser();
+    if (!user) {
+        alert('Vui lòng đăng nhập với tài khoản Quản Lý Cửa Hàng!');
+        window.location.href = redirectUrl;
+        return null;
+    }
+    if (user.role !== 'admin' && user.role !== 'shop_manager') {
+        alert('Bạn không có quyền truy cập khu vực Quản Lý!');
+        window.location.href = '../index.html';
+        return null;
+    }
+    return user;
+}
+
 // User Navigation & Header Status
 function renderHeaderAuth() {
     const user = getCurrentUser();
@@ -37,6 +52,8 @@ function renderHeaderAuth() {
 
     if (user) {
         const isAdmin = user.role === 'admin';
+const isManager = user.role === 'shop_manager';
+const hasAdminArea = isAdmin || isManager;
         authContainer.innerHTML = `
             <div class="user-dropdown-wrap" style="position: relative; display: inline-block;">
                 <button class="user-menu-btn" id="userMenuToggleBtn" style="display: flex; align-items: center; gap: 8px; background: rgba(0,82,204,0.08); border: 1px solid rgba(0,82,204,0.2); padding: 7px 14px; border-radius: 999px; cursor: pointer; color: var(--primary); font-weight: 600;">
@@ -48,11 +65,11 @@ function renderHeaderAuth() {
                     <div style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; background: #f8fafc;">
                         <div style="font-size: 0.85rem; color: #64748b;">Đang đăng nhập:</div>
                         <strong style="color: #0f172a; font-size: 0.95rem;">${user.fullName}</strong>
-                        <div style="font-size: 0.75rem; color: #0052cc; text-transform: uppercase; font-weight: 700; margin-top: 2px;">${user.role === 'admin' ? 'Quản Trị Viên' : 'Khách Hàng'}</div>
+                        <div style="font-size: 0.75rem; color: #0052cc; text-transform: uppercase; font-weight: 700; margin-top: 2px;">${user.role === 'admin' ? 'Quản Trị Viên' : user.role === 'shop_manager' ? 'Quản Lý Cửa Hàng' : 'Khách Hàng'}</div>
                     </div>
-                    ${isAdmin ? `
+                    ${hasAdminArea ? `
                     <a href="admin/index.html" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #0052cc; font-weight: 600; text-decoration: none; border-bottom: 1px solid #f1f5f9;">
-                        <i class="fas fa-shield-alt"></i> Trang Quản Trị
+                        <i class="fas fa-shield-alt"></i> ${isAdmin ? 'Trang Quản Trị' : 'Trang Quản Lý'}
                     </a>` : ''}
                     <a href="account.html" style="display: flex; align-items: center; gap: 10px; padding: 10px 16px; color: #334155; text-decoration: none;">
                         <i class="fas fa-user-cog"></i> Tài khoản của tôi
@@ -264,6 +281,8 @@ function handleLogin(e) {
 
     if (user.role === 'admin') {
         window.location.href = 'admin/index.html';
+    } else if (user.role === 'shop_manager') {
+        window.location.href = 'admin/products.html';
     } else {
         const urlParams = new URLSearchParams(window.location.search);
         const redirect = urlParams.get('redirect') || 'index.html';

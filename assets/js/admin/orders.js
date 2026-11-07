@@ -6,7 +6,7 @@
 let viewingOrderId = null;
 
 function initAdminOrders() {
-    const adminUser = requireAdminAuth('../login.html');
+    const adminUser = requireManagerAuth('../login.html');
     if (!adminUser) return;
 
     // Check query param for code

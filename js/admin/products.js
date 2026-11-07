@@ -7,7 +7,7 @@ let editingProductId = null;
 let currentVariantProductId = null;
 
 function initAdminProducts() {
-    const adminUser = requireAdminAuth('../login.html');
+    const adminUser = requireManagerAuth('../login.html');
     if (!adminUser) return;
 
     // Populate category dropdown in modal
